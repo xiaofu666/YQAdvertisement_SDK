@@ -4,7 +4,7 @@
 
 + [下载 YQAdvertisement_SDK](https://github.com/xiaofu666/YQAdvertisement_SDK) 并使用附带的 [示例应用程序](https://github.com/xiaofu666/YQAdvertisement_SDK/tree/master/Example/YQAdDemo)
 
-+ 查看 [文档](https://github.com/xiaofu666/YQAdvertisement_SDK/blob/master/YXLaunchAD/Document/%E4%BA%91%E8%9C%BB%E5%B9%BF%E5%91%8ASDK-iOS.docx) 以全面了解YQAdvertisement_SDK中提供的所有API
++ 查看 [文档](https://github.com/xiaofu666/YQAdvertisement_SDK/blob/master/YXLaunchAD/Document/UnioniOSSDK.md) 以全面了解YQAdvertisement_SDK中提供的所有API
 
 + 如果您还有其他问题，请联系我们运营
 
