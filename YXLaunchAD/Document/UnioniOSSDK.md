@@ -18,7 +18,7 @@
 - [云蜻广告 iOS SDK 接入说明](#云蜻广告-ios-sdk-接入说明)
     - [1. iOS SDK接入](#1-ios-sdk接入)
         - [1.1 申请应用的媒体位ID](#11-申请应用的媒体位ID)
-        - [1.2 iOS SDK导入framework](#12-iOSSDK导入framework)
+        - [1.2 iOS SDK导入framework](#12-iOS_SDK导入framework)
            - [准备工作](#准备工作)
            - [方法一：直接拖入动态库](#方法一直接拖入动态库)
                - [1.2.1 工程设置导入framework](#121-工程设置导入framework)
@@ -51,11 +51,11 @@
 ### 1.1 申请应用的媒体位ID
 请向云蜻广告平台申请媒体位ID。
 
-### 1.2 iOS SDK导入framework
+### 1.2 iOS_SDK导入framework
 
 #### 方法一：直接拖入动态库
 
-##### 1.2.1 工程设置导入framework
+#### 1.2.1 工程设置导入framework
 
 获取 framework 文件后直接将 {YXLaunchAD}文件拖入工程即可。
 
@@ -67,9 +67,9 @@
 
 ![image](images/bu_5.jpeg)
 
-##### 1.2.2 Xcode编译选项设置
+#### 1.2.2 Xcode编译选项设置
 
-###### 1.2.2.1 添加权限
+#### 1.2.2.1 添加权限
 
  **注意要添加的系统库**
 
@@ -94,13 +94,13 @@
 
 ![image](images/bu_3.jpeg)
 
-###### 1.2.2.2 运行环境配置
+#### 1.2.2.2 运行环境配置
 
 + 支持系统 iOS 8.X 及以上;
 + SDK编译环境 Xcode 9.4, Base SDK 11.1;
 + 支持架构：i386, x86-64, armv7, armv7s, arm64
 
-###### 1.2.2.3 添加依赖库
+#### 1.2.2.3 添加依赖库
 工程需要在TARGETS -> Build Phases中找到Link Binary With Libraries，点击“+”，依次添加下列依赖库	
 
 + StoreKit.framework
