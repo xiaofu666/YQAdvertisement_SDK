@@ -132,7 +132,7 @@ pod 'YXLaunchAD', '~> 0.0.5'
 
 具体操作如图所示：
 
-![image](images/bu_4.png)
+![image](images/bu_4.jpeg)
 
 ## 2. SDK接口类介绍与广告接入
 
