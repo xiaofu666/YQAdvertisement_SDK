@@ -36,7 +36,7 @@
         - [2.7 激励视频](#27-激励视频)
 
     - [附录](#附录)
-        - [SDK错误码](#sdk错误码)
+        - [SDK错误码](#错误码)
         - [FAQ](#faq)
 
 <!-- /TOC -->
@@ -65,7 +65,7 @@
 
 #### 方法二：
 
-SDK1982版本以后支持pod方式接入，只需配置pod环境，在podfile文件中加入以下代码即可接入成功。
+SDK1982版本以后支持pod方式接入，只需配置pod环境，在podfile文件中加入以下代码即可接入成功。不用在添加任何依赖库。
 ```
 pod 'YXLaunchAD', '~> 0.0.5'
 ```
@@ -182,7 +182,8 @@ SDK 需要在 AppDelegate 的方法 ```- (BOOL)application:(UIApplication *)appl
 
 ## 附录
 
-下面是各种error code的值
+### 错误码
+下面是各种ErrorCode的值
 
 ```Objective-C
     ErrorCode        = -3,     // 解析的数据没有广告
