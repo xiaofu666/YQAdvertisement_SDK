@@ -233,7 +233,7 @@ self.iconAd.delegate = self;
 
 ​    
 ​    
-​    ```objective-c
+```objective-c
 ​    YXLaunchAdManager *adManager = [YXLaunchAdManager shareManager];
 ​    
 ​    adManager.waitDataDuration = 5;
@@ -257,10 +257,9 @@ self.iconAd.delegate = self;
 ​    
 ​    adManager.bottomView = bottom;
 ​    [adManager loadLaunchAdWithShowAdWindow:self.window];
-​    ```
+```
 ​    
 ​    建议等待时间设置为5秒，展示时间设置为5秒。
-​    
 ​    App在从后台5分钟后到前台时 建议也加上开屏广告。
 
 ### 2.8 激励视频
