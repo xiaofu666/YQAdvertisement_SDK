@@ -66,6 +66,12 @@
 @property (nonatomic, strong) UIColor *titleColor;
 //字体大小
 @property (nonatomic, strong) UIFont *titleFont;
+//item宽度
+@property (nonatomic, assign) CGFloat itemWidth;
+//item高度
+@property (nonatomic, assign) CGFloat itemHeight;
+//icon的ContentMode
+@property (nonatomic)         UIViewContentMode contentMode;
 //箭头方向
 @property(nonatomic,assign) YXPopupMenuDirection popType;
 
