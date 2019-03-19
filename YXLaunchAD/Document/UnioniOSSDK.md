@@ -99,6 +99,7 @@
 + 支持系统 iOS 8.X 及以上;
 + SDK编译环境 Xcode 9.4, Base SDK 11.1;
 + 支持架构：i386, x86-64, armv7, armv7s, arm64
++ 本SDK依赖微信库，集成可参考[微信SDK集成](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=1417694084&token=88534ffbd0c33679ceca8232a91cfeae92585126&lang=zh_CN)
 
 #### 1.2.2.3 添加依赖库
 工程需要在TARGETS -> Build Phases中找到Link Binary With Libraries，点击“+”，依次添加下列依赖库	
@@ -133,7 +134,7 @@
 
 SDK1982版本以后支持pod方式接入，只需配置pod环境，在podfile文件中加入以下代码即可接入成功。不用在添加任何依赖库。
 ```
-pod 'YXLaunchAD', '~> 0.0.5'
+pod 'YXLaunchAD'
 ```
 更多关于pod方式的接入请参考 [gitthub地址](https://github.com/xiaofu666/YQAdvertisement_SDK)
 
