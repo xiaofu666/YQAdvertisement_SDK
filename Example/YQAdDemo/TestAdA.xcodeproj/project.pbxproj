@@ -44,6 +44,7 @@
 		8270C80420662600005C8545 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C80320662600005C8545 /* StoreKit.framework */; };
 		8270C8062066261F005C8545 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C8052066261F005C8545 /* libz.tbd */; };
 		E774199A223FA3FD00B2B5ED /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E7741999223FA3FD00B2B5ED /* libresolv.9.tbd */; };
+		E77419B62240862000B2B5ED /* YXInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77419B52240862000B2B5ED /* YXInterstitialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,8 @@
 		8270C80320662600005C8545 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8270C8052066261F005C8545 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E7741999223FA3FD00B2B5ED /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		E77419B42240862000B2B5ED /* YXInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXInterstitialViewController.h; sourceTree = "<group>"; };
+		E77419B52240862000B2B5ED /* YXInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXInterstitialViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +258,8 @@
 				8270C79520661EAA005C8545 /* ViewController.m */,
 				8238B129217F097000346C23 /* YXIconViewController.h */,
 				8238B128217F097000346C23 /* YXIconViewController.m */,
+				E77419B42240862000B2B5ED /* YXInterstitialViewController.h */,
+				E77419B52240862000B2B5ED /* YXInterstitialViewController.m */,
 				8270C79720661EAA005C8545 /* Main.storyboard */,
 				8270C79A20661EAA005C8545 /* Assets.xcassets */,
 				8270C79C20661EAA005C8545 /* LaunchScreen.storyboard */,
@@ -441,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8214500E21B7B5EE00081AED /* YXScrollerBannerViewController.m in Sources */,
+				E77419B62240862000B2B5ED /* YXInterstitialViewController.m in Sources */,
 				82367AA8217D729500B4FB4E /* YXFeedAdRegisterView.m in Sources */,
 				8238B124217F04C300346C23 /* YXFeedAdTableViewCell.m in Sources */,
 				82367AA7217D729500B4FB4E /* YXFeedAdViewController.m in Sources */,

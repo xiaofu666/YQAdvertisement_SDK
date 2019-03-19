@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YXLaunchAD"
-  s.version      = "0.0.5"
+  s.version      = "3.0.0"
   s.summary      = "YXLaunchAds is a SDK from CloudDragonfly providing union AD service."
   s.description  = <<-DESC
                    ‘CloudDragonfly provides Union ADs which include native、banner、feed、splash、RewardVideo etc..’
