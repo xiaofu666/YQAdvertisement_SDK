@@ -63,7 +63,7 @@
 
 ![image](images/bu_1.jpeg)
 
-拖入完请确保Copy Bundle Resources中有BUAdSDK.bundle，否则可能出现incon图片加载不出来的情况。
+拖入完请确保Copy Bundle Resources中有BUAdSDK.bundle，否则可能出现icon图片加载不出来的情况。
 
 ![image](images/bu_5.jpeg)
 
@@ -97,7 +97,7 @@
 #### 1.2.2.2 运行环境配置
 
 + 支持系统 iOS 8.X 及以上;
-+ SDK编译环境 Xcode 9.4, Base SDK 11.1;
++ SDK编译环境 Xcode 9.0;
 + 支持架构：i386, x86-64, armv7, armv7s, arm64
 + 本SDK依赖微信库，集成可参考[微信SDK集成](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=1417694084&token=88534ffbd0c33679ceca8232a91cfeae92585126&lang=zh_CN)
 
@@ -219,19 +219,20 @@ SDK 需要在 AppDelegate 的方法 ```- (BOOL)application:(UIApplication *)appl
 
 
 ### FAQ
+
 1. 媒体平台配置了只出小图和组图，为什么会返回大图？（类似返回素材类型和媒体平台不符问题）
 
-	答：先check下接入版本，1.2.0及之前版本的SDK对素材类型解析有问题，如果版本问题建议升级；
+	答：先check下接入版本，1.1及之前版本的SDK对素材类型解析有问题，如果版本问题建议升级；
 
 2. iOS的广告页面在我们app内打开，没有办法关闭或返回。
 
 	答：无法返回是由于 您的主页ViewController 隐藏了NavigationBar；
 
-3.	发现头条 SDK里 BUWebViewController 类 TTRUIWebView 类有内存泄漏。
+3.	发现 SDK里 UIWebView 类有内存泄漏。
 
-	答：是系统的问题， UIWebView 一致有泄漏， 我们后续会考虑用 WKWebView 替换
+	答：是系统的问题， UIWebView 一直有泄漏， 我们后续会考虑用 WKWebView 替换
 
 4. iOS集成的包大小是多少?
 
-	答	: 根据我们demo打包后的计算为3M左右. 但是具体大小会根据导入的功能有所差别. 实际情况以集成后的包大小为主.
+	答	: 根据我们demo打包后的计算为1M左右. 但是具体大小会根据导入的功能有所差别. 实际情况以集成后的包大小为主.
 			
