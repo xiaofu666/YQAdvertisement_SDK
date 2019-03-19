@@ -36,9 +36,9 @@ end
 $ pod install
 ```
 
-仅在**1982版**之后支持Pod访问
+仅在**3.0版**之后支持Pod访问
 
-如果你想在版本1982之前获得Bytedance-UnionAD，请访问[工会](http://ad.toutiao.com/union/media)了解更多信息。
+如果你想在版本3.0之前获得YXLaunchAD，请访问[工会](https://cocoapods.org)了解更多信息。
 
 ## 作者
 
