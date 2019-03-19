@@ -230,8 +230,6 @@ self.iconAd.delegate = self;
 3. 广告页面呈现在一个不是keywindow的windows上 ，建议开屏广告的初始化放在第一位。
 
 * 非全屏示例：
-
-​    
 ​    
 ```objective-c
 ​    YXLaunchAdManager *adManager = [YXLaunchAdManager shareManager];
