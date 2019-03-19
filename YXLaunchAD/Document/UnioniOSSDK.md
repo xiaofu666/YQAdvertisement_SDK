@@ -12,7 +12,8 @@
 | v2.5 | 2018-10-04 |【1】增加banner广告 【2】优化开屏广告 |
 | v2.8 | 2018-11-10 |【1】增加广告点击跳转微信小程序功能。【2】微信开放平台新增了微信模块用户统计功能 【3】增加原生广告。 |
 | v2.9  | 2018-12-16 |【1】优化轮播banner展示【2】添加pageController，默认显示 |
-| v3.0 | 2019-03-19 |【1】增加更多尺寸的banner显示 【2】增加自定义大小的原生尺寸广告数据 【3】增加多Icon样式。 |
+| v3.0 | 2019-02-19 |【1】增加更多尺寸的banner显示 【2】增加自定义大小的原生尺寸广告数据  |
+| v3.0.3 | 2019-03-19 | 增加多Icon样式。 |
 <!-- TOC -->
 
 - [云蜻广告 iOS SDK 接入说明](#云蜻广告-ios-sdk-接入说明)
@@ -49,7 +50,9 @@
 #### 准备工作
 
 ### 1.1 申请应用的媒体位ID
-请向云蜻广告平台申请媒体位ID。
+1.   申请账号：开发者从云蜻SDK后台运营人员处获取账号、密码后，登录[云蜻SDK系统后台](http://sspview.yunqingugm.com/)。
+
+2.   媒体位id：开发者每创建一个应用后，系统会自动生成媒体位id，可在云蜻SDK后台界面查看到已创建的应用以及对应的媒体位id。
 
 ### 1.2 iOS_SDK导入framework
 
@@ -134,7 +137,8 @@
 
 SDK1982版本以后支持pod方式接入，只需配置pod环境，在podfile文件中加入以下代码即可接入成功。不用在添加任何依赖库。
 ```
-pod 'YXLaunchAD'
+# 建议pod到最新版本 当前最新版本为3.0.3
+pod 'YXLaunchAD' , '~> 3.0.3'
 ```
 更多关于pod方式的接入请参考 [gitthub地址](https://github.com/xiaofu666/YQAdvertisement_SDK)
 
@@ -162,7 +166,34 @@ SDK 需要在 AppDelegate 的方法 ```- (BOOL)application:(UIApplication *)appl
 ### 2.3 Icon广告
 
 + **类型说明：**Icon广告主要是 APP 中展示一个小图标，用户点击可跳到对应的广告业或者小程序。
-+ **使用说明：**SDK可提供单Icon与多Icon样式。具体可参考Demo中YXIconViewController部分示例代码
++ **使用说明：**SDK可提供单Icon与多Icon样式。具体可参考Demo中YXIconViewController部分示例代码。
+
+1. 导入
+
+```objective-c
+#import <YXLaunchAds/YXIconAdManager.h>
+```
+
+
+
+2. 遵循代理  
+
+```objective-c
+<YXIconAdManagerDelegate>
+```
+
+
+
+3. 使用示例
+
+```objective-c
+self.iconAd = [[YXIconAdManager alloc]initWithFrame:CGRectMake(100, 300, 40, 40)];
+self.iconAd.mediaId = iconMediaID;
+self.iconAd.adType = YXIconType;
+self.iconAd.delegate = self;
+[self.iconAd loadIconAd];
+```
+
 
 ### 2.4 原生banner广告
 + **类型说明：**原生banner广告是为满足媒体多元化需求而开发的一种原生广告。
@@ -180,9 +211,85 @@ SDK 需要在 AppDelegate 的方法 ```- (BOOL)application:(UIApplication *)appl
 
 + **类型说明：**开屏广告主要是 APP 启动时展示的全屏广告视图，开发只要按照接入标准就能够展示设计好的视图。具体可参考Demo中YXInterstitialViewController部分示例代码
 
+1. 导入
+
+```objective-c
+#import <YXLaunchAds/YXLaunchAdManager.h>
+```
+
+
+
+2. 遵循代理 
+
+```objective-c
+<YXLaunchAdManagerDelegate>
+```
+
+
+
+3. 广告页面呈现在一个不是keywindow的windows上 ，建议开屏广告的初始化放在第一位。
+
+* 非全屏示例：
+
+​    
+​    
+​    ```objective-c
+​    YXLaunchAdManager *adManager = [YXLaunchAdManager shareManager];
+​    
+​    adManager.waitDataDuration = 5;
+​    adManager.duration = 5;
+​    adManager.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen adManager.mediaId = splashMediaID;
+​    adManager.adType = YXScreenType; 
+​    adManager.imageOption = YXLaunchAdImageDefault;
+​    adManager.contentMode = UIViewContentModeScaleAspectFill;
+​    adManager.showFinishAnimate = ShowFinishAnimateNone;
+​    adManager.showFinishAnimateTime = 0.8;
+​    adManager.skipButtonType = SkipTypeTimeText;
+​    adManager.delegate = self;
+​    
+​    UIView *bottom = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height * 0.8, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.2)];
+​    bottom.backgroundColor = [UIColor clearColor];
+​    UIImageView *logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"yxadlogo"]];
+​    //把logo置于 bottom 中心
+​    logoImageView.frame = bottom.bounds;
+​    logoImageView.contentMode =  UIViewContentModeCenter;
+​    [bottom addSubview:logoImageView];
+​    
+​    adManager.bottomView = bottom;
+​    [adManager loadLaunchAdWithShowAdWindow:self.window];
+​    ```
+​    
+​    建议等待时间设置为5秒，展示时间设置为5秒。
+​    
+​    App在从后台5分钟后到前台时 建议也加上开屏广告。
+
 ### 2.8 激励视频
 
-+ **类型说明：**激励视频广告是一种全新的广告形式，用户可选择观看视频广告以换取有价物，例如虚拟货币、应用内物品和独家内容等等；这类广告的长度为 15-30 秒，不可跳过，且广告的结束画面会显示结束页面，引导用户进行后续动作。具体可参考Demo中YXMotivationVideoViewController部分示例代码
++ **类型说明：**激励视频广告是一种全新的广告形式，用户可选择观看视频广告以换取有价物，例如虚拟货币、应用内物品和独家内容等等；这类广告的长度为 15-30 秒，不可跳过，且广告的结束画面会显示结束页面，引导用户进行后续动作。具体可参考Demo中YXMotivationVideoViewController部分示例代码。
+
+1. 导入
+
+```objective-c
+#import <YXLaunchAds/YXMotivationVideoManager.h>  
+```
+
+2. 遵循代理 
+
+```objective-c
+<YXMotivationDelegate>
+```
+
+
+
+3. 使用示例
+
+```objective-c
+self.motivationVideo = [YXMotivationVideoManager new];
+self.motivationVideo.delegate = self;
+self.motivationVideo.showAdController = self;
+self.motivationVideo.isVertical = YES;
+self.motivationVideo.mediaId = @"beta_ios_video";
+```
 
 
 
