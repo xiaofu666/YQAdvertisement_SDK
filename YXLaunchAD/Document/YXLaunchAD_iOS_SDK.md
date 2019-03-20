@@ -135,7 +135,7 @@
 
 #### 方法二：使用CocoaPods
 
-SDK1982版本以后支持pod方式接入，只需配置pod环境，在podfile文件中加入以下代码即可接入成功。不用在添加任何依赖库。
+SDK3.0版本以后支持pod方式接入，只需配置pod环境，在podfile文件中加入以下代码即可接入成功。不用在添加任何依赖库。
 ```
 # 建议pod到最新版本 当前最新版本为3.0.3
 pod 'YXLaunchAD' , '~> 3.0.3'
@@ -314,7 +314,7 @@ self.motivationVideo.mediaId = @"beta_ios_video";
     ErrorCode       = 50001   // 广告服务器错误
     服务器错误码
     ErrorCode       = 40008 //没有填写素材尺寸，或者素材尺寸大于 10000
-    ErrorCode	     = 40009 //媒体是空，或者没有运行
+    ErrorCode       = 40009 //媒体是空，或者没有运行
     ErrorCode       = 40015 //媒体已经被通知整改三次以上,进行校验,如果字段非法,则不返回广告
     ErrorCode       = 40016 //请求的 appid 与媒体平台的 appid 不一致 
     ErrorCode       = 40018 //SDK包名与广告配置包名不一致
