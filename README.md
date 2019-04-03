@@ -5,7 +5,7 @@
 [![Language](https://img.shields.io/badge/Language-Objective--C-FF7F24.svg?style=flat)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
 [![CocoaPods](https://img.shields.io/cocoapods/p/YXLaunchAD.svg)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
 [![CocoaPods](https://img.shields.io/cocoapods/v/YXLaunchAD.svg)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
- [![CocoaPods](https://img.shields.io/cocoapods/at/YJBannerView.svg)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
+ [![CocoaPods](https://img.shields.io/cocoapods/at/YXLaunchAD.svg)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
 
 ## 如何开始
 
