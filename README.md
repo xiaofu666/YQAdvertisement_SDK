@@ -1,16 +1,14 @@
 # YXLaunchAD
 <!--&middot;-->
 [![LurichAD](https://img.shields.io/badge/Lurich-AD-red.svg)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
-[![Travis](https://img.shields.io/travis/xiaofu666/YXLaunchAD.svg?style=flat)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
+[![Travis](https://img.shields.io/travis/xiaofu666/YQAdvertisement_SDK.svg?style=flat)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
 [![Language](https://img.shields.io/badge/Language-Objective--C-FF7F24.svg?style=flat)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
 [![CocoaPods](https://img.shields.io/cocoapods/p/YXLaunchAD.svg)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
 [![CocoaPods](https://img.shields.io/cocoapods/v/YXLaunchAD.svg)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
- [![CocoaPods](https://img.shields.io/cocoapods/at/YXLaunchAD.svg)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
  [![开源爱情](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
  [![开源爱情](https://badges.frapsoft.com/os/gpl/gpl.svg?v=102)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
  [![开源爱情](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
- [![star this repo](http://githubbadges.com/star.svg?user=xiaofu666&repo=badges&style=flat)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
- [![fork this repo](http://githubbadges.com/fork.svg?user=xiaofu666&repo=badges&style=flat)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
+ [![Downloads](https://img.shields.io/cocoapods/dt/YQAdvertisement_SDK.svg)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
 
 ## 如何开始
 
