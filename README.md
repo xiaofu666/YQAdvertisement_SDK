@@ -6,6 +6,11 @@
 [![CocoaPods](https://img.shields.io/cocoapods/p/YXLaunchAD.svg)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
 [![CocoaPods](https://img.shields.io/cocoapods/v/YXLaunchAD.svg)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
  [![CocoaPods](https://img.shields.io/cocoapods/at/YXLaunchAD.svg)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
+ [![开源爱情](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
+ [![开源爱情](https://badges.frapsoft.com/os/gpl/gpl.svg?v=102)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
+ [![开源爱情](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
+ [![star this repo](http://githubbadges.com/star.svg?user=xiaofu666&repo=badges&style=flat)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
+ [![fork this repo](http://githubbadges.com/fork.svg?user=xiaofu666&repo=badges&style=flat)](https://github.com/xiaofu666/YQAdvertisement_SDK.git)
 
 ## 如何开始
 
