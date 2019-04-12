@@ -14,6 +14,7 @@
 | v2.9  | 2018-12-16 |【1】优化轮播banner展示【2】添加pageController，默认显示 |
 | v3.0 | 2019-02-19 |【1】增加更多尺寸的banner显示 【2】增加自定义大小的原生尺寸广告数据  |
 | v3.0.3 | 2019-03-19 | 增加多Icon样式。 |
+| v4.0.0 | 2019-04-12 |  【1】优化轮播广告展示，增强用户自定义体验  【2】增加数据安全性。 |
 <!-- TOC -->
 
 - [云蜻广告 iOS SDK 接入说明](#云蜻广告-ios-sdk-接入说明)
@@ -137,8 +138,8 @@
 
 SDK3.0版本以后支持pod方式接入，只需配置pod环境，在podfile文件中加入以下代码即可接入成功。不用在添加任何依赖库。
 ```
-# 建议pod到最新版本 当前最新版本为3.0.3
-pod 'YXLaunchAD' , '~> 3.0.3'
+# 建议pod到最新版本 当前最新版本为4.0.0
+pod 'YXLaunchAD' , '~> 4.0.0'
 ```
 更多关于pod方式的接入请参考 [gitthub地址](https://github.com/xiaofu666/YQAdvertisement_SDK)
 
@@ -148,15 +149,7 @@ pod 'YXLaunchAD' , '~> 3.0.3'
 
 #### 2.1.1 使用
 
-SDK 需要在 AppDelegate 的方法 ```- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions``` 里进行初始化
-
-其中以下设置是 **必须** 的，应用相关 appID 设置：
-
-``` Objective-C
-[YXAdSDKManager defaultManager]; //工程初始化
-```
-
-更多使用方式可以参见 SDK Demo 工程
+SDK的开屏广告建议在 AppDelegate 的方法 ```- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions``` 里最先进行初始化
 
 ### 2.2 原生广告
 + **类型说明：** 广告原生广告即一般广告样式，形式分为图文和视频，按场景又可区分为原生banner、原生插屏广告等。
@@ -318,7 +311,19 @@ self.motivationVideo.mediaId = @"beta_ios_video";
     ErrorCode       = 40015 //媒体已经被通知整改三次以上,进行校验,如果字段非法,则不返回广告
     ErrorCode       = 40016 //请求的 appid 与媒体平台的 appid 不一致 
     ErrorCode       = 40018 //SDK包名与广告配置包名不一致
-
+    
+    ErrorCode       = 205001 //后台数据错误
+    ErrorCode       = 205002 //视频素材下载错误
+    ErrorCode       = 205003 //视频素材播放错误
+    ErrorCode       = 205004 //没匹配的广告，禁止重试，否则影响流量变现效果
+    ErrorCode       = 205005 //广告请求量或者消耗等超过日限额，请第二天再请求广告
+    ErrorCode       = 205006 //包名校验非法
+    ErrorCode       = 205009 //广告请求量或者消耗等超过小时限额，请一小时后再请求广告
+    ErrorCode       = 205010 //广告样式校验失败，请检查广告位与接口使用是否一致
+    ErrorCode       = 205012 //广告过期，请重新拉取
+    ErrorCode       = 205013 //广告拉取过于频繁，请稍后再试
+    ErrorCode       = 206000 //未知错误，联系腾讯广告联盟商务同事协助排查
+    
 ```
 
 

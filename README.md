@@ -37,7 +37,6 @@ platform :ios, '8.0'
 
 target 'TargetName' do
     pod 'YXLaunchAD'
-    pod 'WechatOpenSDK'
 end
 ```
 然后，运行以下命令：
