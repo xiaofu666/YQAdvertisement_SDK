@@ -24,6 +24,5 @@ Pod::Spec.new do |s|
   s.vendored_frameworks =  'YXLaunchAD/Frameworks/YXLaunchAds.framework'
 
   s.dependency 'Bytedance-UnionAD', '~> 1.9.9.2'
-  s.dependency 'WechatOpenSDK', '~> 1.8.4'
 
 end
