@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YXLaunchAD"
-  s.version      = "4.0.1" # 版本号
+  s.version      = "4.1.0" # 版本号
   s.summary      = "YXLaunchAds is a SDK from CloudDragonfly providing union AD service."
   s.description  = <<-DESC
                    ‘CloudDragonfly provides Union ADs which include native、banner、feed、splash、RewardVideo etc..’
@@ -23,6 +23,6 @@ Pod::Spec.new do |s|
 
   s.vendored_frameworks =  'YXLaunchAD/Frameworks/YXLaunchAds.framework'
 
-  s.dependency 'Bytedance-UnionAD', '~> 1.9.9.2'
+  s.dependency 'Bytedance-UnionAD', '~> 1.9.9.5'
   s.dependency 'WechatOpenSDK', '~> 1.8.4'
 end

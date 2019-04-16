@@ -9,7 +9,7 @@
 #import "YXInterstitialViewController.h"
 #import <YXLaunchAds/YXLaunchAds.h>
 
-static  NSString * interstitialAdID = @"xngj_ios_native";
+static  NSString * interstitialAdID = @"beta_ios_banner";
 @interface YXInterstitialViewController ()<YXInterstitialAdManagerDelegate>
 
 @property (nonatomic, strong) YXInterstitialAdManager *interstitialAd;

@@ -62,8 +62,6 @@
  */
 - (void)initLaunchAd
 {
-    [YXAdSDKManager defaultManager];
-    
     YXLaunchAdManager *adManager = [YXLaunchAdManager shareManager];
     adManager.waitDataDuration = 5;
     adManager.duration = 5;

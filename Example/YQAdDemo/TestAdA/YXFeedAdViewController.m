@@ -14,7 +14,7 @@
 
 #import "YXFeedAdTableViewCell.h"
 
-static  NSString * feedMediaID = @"wxbus_ios_native";
+static  NSString * feedMediaID = @"beta_ios_native";
 
 @interface YXFeedAdViewController () <YXFeedAdManagerDelegate ,UITableViewDelegate,UITableViewDataSource>
 

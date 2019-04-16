@@ -12,7 +12,7 @@
 
 #import "AppDelegate.h"
 
-static  NSString * bannerMediaID = @"wxbus_ios_banner";
+static  NSString * bannerMediaID = @"beta_ios_banner";
 
 @interface YXBannerViewController ()<YXBannerAdManagerDelegate>
 {
@@ -51,7 +51,7 @@ static  NSString * bannerMediaID = @"wxbus_ios_banner";
     bannerView.delegate = self;
     bannerView.mediaId = bannerMediaID;
     bannerView.bannerType = BottomBannerType;
-    bannerView.adSize = YXAD_BannerCustom;
+    bannerView.adSize = YXAD_Banner600_90;
     [self.view addSubview:bannerView];
     NSLog(@"Banner请求");
     [bannerView loadBannerAD];
