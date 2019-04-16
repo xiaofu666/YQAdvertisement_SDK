@@ -141,8 +141,8 @@
 
 SDK3.0版本以后支持pod方式接入，只需配置pod环境，在podfile文件中加入以下代码即可接入成功。不用在添加任何依赖库。
 ```
-# 建议pod到最新版本 当前最新版本为4.0.0
-pod 'YXLaunchAD' , '~> 4.0.0'
+# 建议pod到最新版本 当前最新版本为4.1.0
+pod 'YXLaunchAD' , '~> 4.1.0'
 ```
 更多关于pod方式的接入请参考 [gitthub地址](https://github.com/xiaofu666/YQAdvertisement_SDK)
 
