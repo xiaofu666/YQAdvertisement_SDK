@@ -156,7 +156,7 @@ static  NSString * feedMediaID = @"beta_ios_native";
     _feedManager.mediaId = feedMediaID;
     _feedManager.controller = self;
     _feedManager.delegate = self;
-    _feedManager.adCount = 3;
+    _feedManager.adCount = 1;
     
     [_feedManager loadFeedAd];
     
