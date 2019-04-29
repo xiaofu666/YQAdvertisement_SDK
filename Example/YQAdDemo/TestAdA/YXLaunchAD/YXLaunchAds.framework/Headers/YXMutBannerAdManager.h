@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "YXLaunchConfiguration.h"
 #import "YXFeedAdData.h"
+#import "SFObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @protocol YXMutBannerAdManagerDelegate<NSObject>
@@ -30,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)didClickedMutBannerAdWithIndex:(NSInteger)index;
 
 @end
-@interface YXMutBannerAdManager : NSObject
+@interface YXMutBannerAdManager : SFObject
 
 @property(nonatomic,weak) id<YXMutBannerAdManagerDelegate> delegate;
 
@@ -79,7 +80,10 @@ NS_ASSUME_NONNULL_BEGIN
 /** 是否在只有一张图时隐藏pagecontrol，默认为YES */
 @property(nonatomic) BOOL hidesForSinglePage;
 
-/** pagecontrol 样式，默认为动画样式 */
+/**
+ pagecontrol 样式，默认为系统自带经典样式
+ 当为 YXBannerScrollViewPageImage 前缀样式时，必须传入分页控件小图标的图片，否则展示无效果
+ */
 @property (nonatomic, assign) YXBannerScrollViewPageContolStyle pageControlStyle;
 
 /** 分页控件位置 */

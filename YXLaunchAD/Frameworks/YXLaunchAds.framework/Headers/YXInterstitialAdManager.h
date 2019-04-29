@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "SFView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -33,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YXInterstitialAdManager : UIView
+@interface YXInterstitialAdManager : SFView
 
 @property (nonatomic,weak) id<YXInterstitialAdManagerDelegate> delegate;
 

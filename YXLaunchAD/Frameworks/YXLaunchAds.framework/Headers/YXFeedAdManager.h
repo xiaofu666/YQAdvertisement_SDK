@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "YXFeedAdData.h"
 #import "YXLaunchAdManager.h"
+#import "SFObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -40,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface YXFeedAdManager : NSObject
+@interface YXFeedAdManager : SFObject
 
 @property(nonatomic,weak) id<YXFeedAdManagerDelegate> delegate;
 

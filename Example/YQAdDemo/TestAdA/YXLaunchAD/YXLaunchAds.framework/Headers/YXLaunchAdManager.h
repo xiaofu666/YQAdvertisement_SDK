@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "YXLaunchConfiguration.h"
+#import "SFObject.h"
 
 //广告代理
 @protocol YXLaunchAdManagerDelegate <NSObject>
@@ -35,6 +36,10 @@
  */
 - (void)didClickedAd;
 /**
+  自定义 VIew 点击后回调
+ */
+- (void)customViewdidClickedAd;
+/**
  落地页或者appstoe返回事件，方便用户做返回后的处理工作
  */
 -(void)didAdShowReturn;
@@ -51,7 +56,7 @@
 
 @end
 
-@interface YXLaunchAdManager : NSObject
+@interface YXLaunchAdManager : SFObject
 /**
  初始化方法
 
@@ -97,6 +102,8 @@
 
 /** 图片广告缩放模式(default UIViewContentModeScaleToFill) */
 @property(nonatomic,assign)UIViewContentMode contentMode;
+
+@property (nonatomic,strong) UIView * _Nullable skipLeftView;
 
 /** 自定义跳过按钮 (不再使用) */
 @property (nonatomic,strong) UIView * _Nullable customSkipView;

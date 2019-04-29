@@ -287,7 +287,109 @@ self.motivationVideo.isVertical = YES;
 self.motivationVideo.mediaId = @"beta_ios_video";
 ```
 
+## 3. 资讯广告接入
 
+###  3.1    准备工作
+
+#### 3.1.1 申请内容广告的媒体位ID
+1.   申请账号：开发者从云蜻SDK后台运营人员处获取账号、密码后，登录[云蜻SDK系统后台](http://sspview.yunqingugm.com/)。
+
+2.   媒体位 ID 以及媒体内容位 ID：开发者每创建一个应用后，系统会自动生成媒体位id和媒体内容位ID，可在云蜻SDK后台界面查看到已创建的应用以及对应的媒体位id。
+
+#### 3.1.2 导入framework
+
+获取 framework 文件后直接将 {YXLaunchAD}文件拖入工程即可。此 SDK 依赖第三方 MJRefresh与Weichat SDK,若工程已有，请勿重复导入
+
+拖入时请按以下方式选择：
+
+![image](images/bu_1.jpeg)
+
+拖入完请确保Copy Bundle Resources中有YQAdSDK.bundle，否则可能出现icon图片加载不出来的情况。
+
+![image](images/bu_5.jpeg)
+
+
+###  3.2     全屏接入
+
+```objective-c
+SFInformationViewController *infoVC = [SFInformationViewController new];
+infoVC.mediaId = @"1234";     //媒体位 ID
+infoVC.mLocationId = @"1234"; //媒体内容位 ID
+[self.navigationController pushViewController:infoVC animated:YES];
+```
+
+###  3.3     半屏接入
+
+#### 3.3.1 新建自定义 ScrollVIew 继承自UIScrollView，遵守代理<UIGestureRecognizerDelegate>，实现代理方法，让其允许多手势操作
+```objective-c
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+return YES;
+}
+```
+#### 3.3.2 让自己的主控器以自定义 ScrollVIew 为底，z遵守代理 <UIScrollViewDelegate>，实现代理方法，在viewDidLoad中添加监听，在dealloc中移除监听。
+#### 3.3.3 懒加载SFHalfPageViewController，让当前主控器添加子控制器，创建属性canScroll来控制ScrollView 的滑动，详情参考 Demo
+```
+- (void)viewDidLoad {
+[super viewDidLoad];
+self.canScroll = YES;
+// Do any additional setup after loading the view.
+self.scrollView = [[SFScrollerView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+self.scrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height+300);
+self.scrollView.delegate = self;
+[self.view addSubview:self.scrollView];
+
+UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 300)];
+headView.backgroundColor = [UIColor purpleColor];
+[self.scrollView addSubview:headView];
+
+UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 300, self.view.bounds.size.width, self.view.bounds.size.height)];
+footView.backgroundColor = [UIColor cyanColor];
+[self.scrollView addSubview:footView];
+
+
+[self addChildViewController:self.webVC];
+[footView addSubview:self.webVC.view];
+
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollStatus) name:@"leaveTop" object:nil];
+
+}
+- (void)changeScrollStatus//改变主视图的状态
+{
+self.canScroll = YES;
+self.webVC.vcCanScroll = NO;
+}
+- (void)dealloc
+{
+[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+- (SFHalfPageViewController *)webVC{
+if (_webVC == nil) {
+_webVC = [[SFHalfPageViewController alloc] init];
+_webVC.mediaId = @"1234";    //媒体位 ID
+_webVC.mLocationId = @"1234"; //媒体内容位 ID
+_webVC.vcCanScroll = NO;
+}
+return _webVC;
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+CGFloat offset = scrollView.contentOffset.y;
+CGFloat bottomCellOffset = 300 - StatusBarAndNavigationBarHeight;
+if (offset >= bottomCellOffset) {
+scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
+if (self.canScroll) {
+self.canScroll = NO;
+self.webVC.vcCanScroll = YES;
+}
+}else{
+if (!self.canScroll) {//子视图没到顶部
+scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
+}
+}
+self.scrollView.showsVerticalScrollIndicator = _canScroll?YES:NO;
+}
+
+```
 
 ## 附录
 
