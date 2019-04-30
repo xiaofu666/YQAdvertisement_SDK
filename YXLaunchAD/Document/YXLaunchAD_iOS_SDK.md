@@ -24,7 +24,7 @@
 <!-- TOC -->
 
 - [云蜻广告 iOS SDK 接入说明](#云蜻广告-ios-sdk-接入说明)
-    - [1. iOS SDK接入](#1-ios-sdk接入)
+    - [1.  展示广告接入](#1-展示广告接入)
         - [1.1 申请应用的媒体位ID](#11-申请应用的媒体位ID)
         - [1.2 iOS SDK导入framework](#12-iOS_SDK导入framework)
            - [准备工作](#准备工作)
@@ -35,23 +35,23 @@
                   - [1.2.2.2 运行环境配置](#1222-运行环境配置)
                   - [1.2.2.3 添加依赖库](#1223-添加依赖库)
            - [方法二：使用CocoaPods](#方法二使用CocoaPods)
-    - [2. SDK接口类介绍与广告接入](#2-sdk接口类介绍与广告接入)
-        - [2.1 全局设置](#21-全局设置)
-        - [2.2 原生广告](#22-原生广告)
-        - [2.3 Icon广告](#23-Icon广告)
-        - [2.4 原生banner广告](#24-原生banner广告)
-        - [2.5 原生轮播广告](#25-原生轮播广告)
-        - [2.6 原生插屏广告](#26-原生插屏广告)
-        - [2.7 开屏广告](#27-开屏广告)
-        - [2.8 激励视频](#28-激励视频)
-   - [3. 资讯广告接入](#3-资讯广告接入)
-        - [3.1 准备工作](#31-准备工作)
-           - [3.1.1 申请内容广告的媒体位ID](#311-申请内容广告的媒体位ID)
-           - [3.1.2 导入framework](#312-导入framework)
-        - [3.2 全屏接入](#32-全屏接入)
-        - [3.3 半屏接入](#33-半屏接入)
-           - [3.3.1 新建自定义ScrollVIew](#331-新建自定义ScrollVIew)
-           - [3.3.2 主控制器操作](#332-主控制器操作)
+        - [1.3 SDK接口类介绍与广告接入](#2-sdk接口类介绍与广告接入)
+            - [1.3.1 全局设置](#21-全局设置)
+            - [1.3.2 原生广告](#22-原生广告)
+            - [1.3.3 Icon广告](#23-Icon广告)
+            - [1.3.4 原生banner广告](#24-原生banner广告)
+            - [1.3.5 原生轮播广告](#25-原生轮播广告)
+            - [1.3.6 原生插屏广告](#26-原生插屏广告)
+            - [1.3.7 开屏广告](#27-开屏广告)
+            - [1.3.8 激励视频](#28-激励视频)
+   - [ 2. 资讯内容接入](#3-资讯内容接入)
+        - [2.1 准备工作](#31-准备工作)
+           - [2.1.1 申请内容接入账号和对应的内容位ID](#311-申请内容接入账号和对应的内容位ID)
+           - [2.1.2 导入framework](#312-导入framework)
+        - [2.2 全屏接入](#32-全屏接入)
+        - [2.3 半屏接入](#33-半屏接入)
+           - [2.3.1 新建自定义ScrollVIew](#331-新建自定义ScrollVIew)
+           - [2.3.2 主控制器操作](#332-主控制器操作)
 
     - [附录](#附录)
         - [SDK错误码](#错误码)
@@ -60,7 +60,7 @@
 <!-- /TOC -->
 
 
-## 1. iOS SDK接入
+## 1. 展示广告接入
 
 #### 准备工作
 
@@ -157,20 +157,20 @@ pod 'YXLaunchAD' , '~> 4.1.3'
 ```
 更多关于pod方式的接入请参考 [gitthub地址](https://github.com/xiaofu666/YQAdvertisement_SDK)
 
-## 2. SDK接口类介绍与广告接入
+### 1.3 SDK接口类介绍与广告接入
 
-### 2.1 全局设置
+#### 1.3.1 全局设置
 
-#### 2.1.1 使用
+##### 1.3.1.1 使用
 
 SDK的开屏广告建议在 AppDelegate 的方法 ```- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions``` 里最先进行初始化
 
-### 2.2 原生广告
+#### 1.3.2 原生广告
 + **类型说明：** 广告原生广告即一般广告样式，形式分为图文和视频，按场景又可区分为原生banner、原生插屏广告等。
 
 + **使用说明：** 在SDK里只需要使用 YXFeedAdManager 就可以获取原生广告，YXFeedAdManager 类提供了原生广告的数据类型等各种信息，在数据获取后可以在属性 data（YXFeedAdData）里面获取广告数据信息。
 
-### 2.3 Icon广告
+#### 1.3.3 Icon广告
 
 + **类型说明：**Icon广告主要是 APP 中展示一个小图标，用户点击可跳到对应的广告业或者小程序。
 + **使用说明：**SDK可提供单Icon与多Icon样式。具体可参考Demo中YXIconViewController部分示例代码。
@@ -202,19 +202,19 @@ self.iconAd.delegate = self;
 ```
 
 
-### 2.4 原生banner广告
+#### 1.3.4 原生banner广告
 + **类型说明：**原生banner广告是为满足媒体多元化需求而开发的一种原生广告。
 + **使用说明：**SDK可提供数据绑定、点击事件的上报、响应回调，开发者进行自渲染，接入方式同原生广告相同。具体可参考Demo中YXBannerViewController部分示例代码
 
-### 2.5 原生轮播广告
+#### 1.3.5 原生轮播广告
 
 + **类型说明：**原生轮播广告主要是在APP 中展示的广告轮播视图，开发只要按照接入标准就能够展示设计好的视图。具体可参考Demo中YXScrollerBannerViewController部分示例代码
 
-### 2.6 原生插屏广告
+#### 1.3.6 原生插屏广告
 + **类型说明：**原生插屏广告是为满足媒体多元化需求而开发的一种原生广告。
 +  **使用说明：**SDK可提供数据绑定、点击事件的上报、响应回调，开发者进行自渲染，接入方式同原生广告相同。具体可参考Demo中YXInterstitialViewController部分示例代码
 
-### 2.7 开屏广告
+#### 1.3.7 开屏广告
 
 + **类型说明：**开屏广告主要是 APP 启动时展示的全屏广告视图，开发只要按照接入标准就能够展示设计好的视图。具体可参考Demo中YXInterstitialViewController部分示例代码
 
@@ -267,7 +267,7 @@ self.iconAd.delegate = self;
 ​    建议等待时间设置为5秒，展示时间设置为5秒。
 ​    App在从后台5分钟后到前台时 建议也加上开屏广告。
 
-### 2.8 激励视频
+#### 1.3.8 激励视频
 
 + **类型说明：**激励视频广告是一种全新的广告形式，用户可选择观看视频广告以换取有价物，例如虚拟货币、应用内物品和独家内容等等；这类广告的长度为 15-30 秒，不可跳过，且广告的结束画面会显示结束页面，引导用户进行后续动作。具体可参考Demo中YXMotivationVideoViewController部分示例代码。
 
@@ -295,16 +295,16 @@ self.motivationVideo.isVertical = YES;
 self.motivationVideo.mediaId = @"beta_ios_video";
 ```
 
-## 3. 资讯广告接入
+## 2. 资讯内容接入
 
-###  3.1    准备工作
+###  2.1    准备工作
 
-#### 3.1.1 申请内容广告的媒体位ID
-1.   申请账号：开发者从云蜻SDK后台运营人员处获取账号、密码后，登录[云蜻SDK系统后台](http://sspview.yunqingugm.com/)。
+#### 2.1.1 申请内容接入账号和对应的内容位ID
+1.   申请账号：开发者从云蜻SDK后台运营人员处获取账号、密码后，登录[云蜻内容运营后台](http://news.yunqingugm.com/)。
 
-2.   媒体位 ID 以及媒体内容位 ID：开发者每创建一个应用后，系统会自动生成媒体位ID和媒体内容位ID，可在云蜻SDK后台界面查看到已创建的应用以及对应的媒体位ID和媒体内容位ID。
+2.  接入账号 ID 以及内容位ID ID：开发者每创建一个应用后，系统会自动生成账号ID和内容位ID，可在云蜻SDK后台界面查看到已创建的应用以及对应的账号ID和内容位ID。
 
-#### 3.1.2 导入framework
+#### 2.1.2 导入framework
 
 获取 framework 文件后直接将 {YXLaunchAD}文件拖入工程即可。此 SDK 依赖第三方 MJRefresh与Weichat SDK,若工程已有，请勿重复导入
 
@@ -315,18 +315,18 @@ self.motivationVideo.mediaId = @"beta_ios_video";
 拖入完请确保Copy Bundle Resources中有YQAdSDK.bundle，否则可能出现icon图片加载不出来的情况。
 
 
-###  3.2     全屏接入
+###  2.2     全屏接入
 
 ```objective-c
 SFInformationViewController *infoVC = [SFInformationViewController new];
-infoVC.mediaId = @"1234";     //媒体位 ID
+infoVC.mediaId = @"1234";     //账号ID
 infoVC.mLocationId = @"1234"; //媒体内容位 ID
 [self.navigationController pushViewController:infoVC animated:YES];
 ```
 
-###  3.3     半屏接入
+###  2.3     半屏接入
 
-#### 3.3.1 新建自定义ScrollVIew
+#### 2.3.1 新建自定义ScrollVIew
  新建自定义ScrollVIew继承自UIScrollView，遵守代理<UIGestureRecognizerDelegate>，实现代理方法，让其允许多手势操作
 ```objective-c
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
@@ -334,7 +334,7 @@ infoVC.mLocationId = @"1234"; //媒体内容位 ID
 return YES;
 }
 ```
-#### 3.3.2 主控制器操作
+#### 2.3.2 主控制器操作
 让自己的主控器以自定义 ScrollVIew 为底，z遵守代理 <UIScrollViewDelegate>，实现代理方法，在viewDidLoad中添加监听，在dealloc中移除监听。 懒加载SFHalfPageViewController，让当前主控器添加子控制器，创建属性canScroll来控制ScrollView 的滑动，详情参考 Demo
 ```
 - (void)viewDidLoad {
@@ -373,7 +373,7 @@ self.webVC.vcCanScroll = NO;
 - (SFHalfPageViewController *)webVC{
 if (_webVC == nil) {
 _webVC = [[SFHalfPageViewController alloc] init];
-_webVC.mediaId = @"1234";    //媒体位 ID
+_webVC.mediaId = @"1234";    //账号 ID
 _webVC.mLocationId = @"1234"; //媒体内容位 ID
 _webVC.vcCanScroll = NO;
 }
