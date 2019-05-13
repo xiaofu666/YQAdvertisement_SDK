@@ -21,6 +21,8 @@
 | v4.1.1 | 2019-04-16 |  更新 Demo 稳定对接版本 |
 | v4.1.2 | 2019-04-18 |  修复一个隐藏 bug |
 | v4.1.3 | 2019-04-24 |  修复Safari 浏览器不能关闭的问题 |
+| v4.2.0 | 2019-05-01 |   接入资讯功能  |
+
 <!-- TOC -->
 
 - [云蜻广告 iOS SDK 接入说明](#云蜻广告-ios-sdk-接入说明)
@@ -46,18 +48,20 @@
             - [1.3.8 激励视频](#138-激励视频)
    - [ 2. 资讯内容接入](#2-资讯内容接入)
         - [2.1 准备工作](#21-准备工作)
-           - [2.1.1 申请内容接入账号和对应的内容位ID](#211-申请内容接入账号和对应的内容位ID)
+           - [2.1.1 申请内容接入用户ID和对应的内容位ID](#211-申请内容接入用户ID和对应的内容位ID)
            - [2.1.2 导入framework](#212-导入framework)
         - [2.2 全屏接入](#22-全屏接入)
         - [2.3 半屏接入](#23-半屏接入)
-           - [2.3.1 新建自定义ScrollVIew](#231-新建自定义ScrollVIew)
-           - [2.3.2 主控制器操作](#232-主控制器操作)
+           - [a. scrollView 的 Demo](#a-scrollView-的-Demo)
+           - [b. tableView 的 Demo](#b-tableView-的-Demo)
 
     - [附录](#附录)
         - [SDK错误码](#错误码)
         - [FAQ](#faq)
 
 <!-- /TOC -->
+
+
 
 
 ## 1. 展示广告接入
@@ -152,8 +156,8 @@
 
 SDK3.0版本以后支持pod方式接入，只需配置pod环境，在podfile文件中加入以下代码即可接入成功。不用在添加任何依赖库。
 ```
-# 建议pod到最新版本 当前最新版本为4.1. 3
-pod 'YXLaunchAD' , '~> 4.1.3'
+# 建议pod到最新版本 当前最新版本为4.2.0
+pod 'YXLaunchAD' , '~> 4.2.0'
 ```
 更多关于pod方式的接入请参考 [gitthub地址](https://github.com/xiaofu666/YQAdvertisement_SDK)
 
@@ -170,7 +174,7 @@ SDK的开屏广告建议在 AppDelegate 的方法 ```- (BOOL)application:(UIAppl
 
 + **使用说明：** 在SDK里只需要使用 YXFeedAdManager 就可以获取原生广告，YXFeedAdManager 类提供了原生广告的数据类型等各种信息，在数据获取后可以在属性 data（YXFeedAdData）里面获取广告数据信息。
 
-#### 1.3.3 Icon广告
+#### 1.3.3 icon广告
 
 + **类型说明：**Icon广告主要是 APP 中展示一个小图标，用户点击可跳到对应的广告业或者小程序。
 + **使用说明：**SDK可提供单Icon与多Icon样式。具体可参考Demo中YXIconViewController部分示例代码。
@@ -181,15 +185,11 @@ SDK的开屏广告建议在 AppDelegate 的方法 ```- (BOOL)application:(UIAppl
 #import <YXLaunchAds/YXIconAdManager.h>
 ```
 
-
-
 2. 遵循代理  
 
 ```objective-c
 <YXIconAdManagerDelegate>
 ```
-
-
 
 3. 使用示例
 
@@ -224,44 +224,35 @@ self.iconAd.delegate = self;
 #import <YXLaunchAds/YXLaunchAdManager.h>
 ```
 
-
-
 2. 遵循代理 
 
 ```objective-c
 <YXLaunchAdManagerDelegate>
 ```
 
-
-
 3. 广告页面呈现在一个不是keywindow的windows上 ，建议开屏广告的初始化放在第一位。
 
 * 非全屏示例：
 ​    
 ```objective-c
+
     YXLaunchAdManager *adManager = [YXLaunchAdManager shareManager];
-​    
-​    adManager.waitDataDuration = 5;
-​    adManager.duration = 5;
-​    adManager.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen adManager.mediaId = splashMediaID;
-​    adManager.adType = YXScreenType; 
-​    adManager.imageOption = YXLaunchAdImageDefault;
-​    adManager.contentMode = UIViewContentModeScaleAspectFill;
-​    adManager.showFinishAnimate = ShowFinishAnimateNone;
-​    adManager.showFinishAnimateTime = 0.8;
-​    adManager.skipButtonType = SkipTypeTimeText;
-​    adManager.delegate = self;
-​    
-​    UIView *bottom = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height * 0.8, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.2)];
-​    bottom.backgroundColor = [UIColor clearColor];
-​    UIImageView *logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"yxadlogo"]];
-​    //把logo置于 bottom 中心
-​    logoImageView.frame = bottom.bounds;
-​    logoImageView.contentMode =  UIViewContentModeCenter;
-​    [bottom addSubview:logoImageView];
-​    
-​    adManager.bottomView = bottom;
-​    [adManager loadLaunchAdWithShowAdWindow:self.window];
+    adManager.waitDataDuration = 10;
+    adManager.duration = 5;
+    adManager.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.8);
+    adManager.mediaId = splashMediaID;
+    adManager.adType = YXScreenType;
+    adManager.imageOption = YXLaunchAdImageDefault;
+    adManager.contentMode = UIViewContentModeScaleAspectFill;
+    adManager.showFinishAnimate = ShowFinishAnimateFadein;
+    adManager.showFinishAnimateTime = 0.8;
+    adManager.skipButtonType = SkipTypeTimeText;
+    adManager.delegate = self;
+    UIView *bottom = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height * 0.8, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.2)];
+    bottom.backgroundColor = [UIColor clearColor];
+    adManager.bottomView = bottom;
+    [adManager loadLaunchAdWithShowAdWindow:[UIApplication sharedApplication].delegate.window];
+ 
 ```
 ​    
 ​    建议等待时间设置为5秒，展示时间设置为5秒。
@@ -283,8 +274,6 @@ self.iconAd.delegate = self;
 <YXMotivationDelegate>
 ```
 
-
-
 3. 使用示例
 
 ```objective-c
@@ -292,27 +281,29 @@ self.motivationVideo = [YXMotivationVideoManager new];
 self.motivationVideo.delegate = self;
 self.motivationVideo.showAdController = self;
 self.motivationVideo.isVertical = YES;
-self.motivationVideo.mediaId = @"beta_ios_video";
+self.motivationVideo.mediaId = @"beta_ios_video";//使用申请得到的媒体位
 ```
+
+
 
 ## 2. 资讯内容接入
 
 ###  2.1    准备工作
 
-#### 2.1.1 申请内容接入用户和对应的内容位ID
+#### 2.1.1 申请内容接入用户ID和对应的内容位ID
 1.   申请账号：开发者从云蜻SDK后台运营人员处获取用户、密码后，登录[云蜻内容运营后台](http://news.yunqingugm.com/)。
 
-2.  接入用户 ID 以及内容位ID ID：开发者每创建一个应用后，系统会自动生成用户ID和内容位ID，可在云蜻SDK后台界面查看到已创建的应用以及对应的账号ID和内容位ID。
+2.  接入用户 ID 以及内容位ID ：开发者每创建一个应用后，系统会自动生成用户ID和内容位ID，可在云蜻SDK后台界面查看到已创建的应用以及对应的用户ID和内容位ID。
 
 #### 2.1.2 导入framework
 
-获取 framework 文件后直接将 {YXLaunchAD}文件拖入工程即可。此 SDK 依赖第三方 MJRefresh与Weichat SDK,若工程已有，请勿重复导入
+获取 framework 文件后直接将 {YXLaunchAD.framework、XibAndPng.bundle}文件拖入工程即可。此 SDK 依赖第三方 MJRefresh与Weichat SDK,若工程已有，请勿重复导入
 
 拖入时请按以下方式选择：
 
 ![image](images/bu_1.jpeg)
 
-拖入完请确保Copy Bundle Resources中有YQAdSDK.bundle，否则可能出现icon图片加载不出来的情况。
+拖入完请确保Copy Bundle Resources中有XibAndPng.bundle，否则可能出现icon图片加载不出来的情况。
 
 
 ###  2.2     全屏接入
@@ -320,14 +311,14 @@ self.motivationVideo.mediaId = @"beta_ios_video";
 ```objective-c
 SFInformationViewController *infoVC = [SFInformationViewController new];
 infoVC.mediaId = @"1234";     //账号ID
-infoVC.mLocationId = @"1234"; //媒体内容位 ID
+infoVC.mLocationId = @"34";   //媒体内容位 ID
 [self.navigationController pushViewController:infoVC animated:YES];
 ```
 
 ###  2.3     半屏接入
 
-#### 2.3.1 新建自定义ScrollVIew
- 新建自定义ScrollVIew继承自UIScrollView，遵守代理<UIGestureRecognizerDelegate>，实现代理方法，让其允许多手势操作
+#### 2.3.1 包含 tableView 半屏接入以及 scrollView 半屏接入，详情参考 Demo
+ 新建自定义ScrollVIew或tableView继承自系统的UIScrollView或 UITableView，遵守代理<UIGestureRecognizerDelegate>，实现代理方法，让其允许多手势操作
 ```objective-c
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
@@ -335,68 +326,187 @@ return YES;
 }
 ```
 #### 2.3.2 主控制器操作
-让自己的主控器以自定义 ScrollVIew 为底，z遵守代理 <UIScrollViewDelegate>，实现代理方法，在viewDidLoad中添加监听，在dealloc中移除监听。 懒加载SFHalfPageViewController，让当前主控器添加子控制器，创建属性canScroll来控制ScrollView 的滑动，详情参考 Demo
-```
+让自己的主控器以自定义 ScrollVIew 或 tableView 为底，遵守代理 <UIScrollViewDelegate>，实现代理方法，在viewDidLoad中添加监听，在dealloc中移除监听。 懒加载SFHalfPageViewController，让当前主控器添加子控制器，创建属性canScroll来控制ScrollView 的滑动，详情参考 Demo
+
+##### **a. scrollView 的 Demo** 
+
+> ##### (isShowAllChannels ： YES -> 所有频道 ; NO -> 只有一个推荐频道)
+
+```objective-c
 - (void)viewDidLoad {
-[super viewDidLoad];
-self.canScroll = YES;
-// Do any additional setup after loading the view.
-self.scrollView = [[SFScrollerView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-self.scrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height+300);
-self.scrollView.delegate = self;
-[self.view addSubview:self.scrollView];
-
-UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 300)];
-headView.backgroundColor = [UIColor purpleColor];
-[self.scrollView addSubview:headView];
-
-UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 300, self.view.bounds.size.width, self.view.bounds.size.height)];
-footView.backgroundColor = [UIColor cyanColor];
-[self.scrollView addSubview:footView];
-
-
-[self addChildViewController:self.webVC];
-[footView addSubview:self.webVC.view];
-
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollStatus) name:@"leaveTop" object:nil];
-
+    [super viewDidLoad];
+    self.canScroll = YES;
+    // Do any additional setup after loading the view.
+    self.scrollView = [[SFScrollerView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    self.scrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height+300);
+    self.scrollView.delegate = self;
+    [self.view addSubview:self.scrollView];
+    
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 300)];
+    headView.backgroundColor = [UIColor purpleColor];
+    [self.scrollView addSubview:headView];
+    
+    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 300, self.view.bounds.size.width, self.view.bounds.size.height)];
+    footView.backgroundColor = [UIColor cyanColor];
+    [self.scrollView addSubview:footView];
+    
+    
+    [self addChildViewController:self.webVC];
+    [footView addSubview:self.webVC.view];
+    
+    //添加请求数据的 HUD 开始请求推荐数据
+    [self.webVC refreshNewsData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollStatus) name:LEAVETOPNOTIFITION object:nil];
+    
 }
 - (void)changeScrollStatus//改变主视图的状态
 {
-self.canScroll = YES;
-self.webVC.vcCanScroll = NO;
-}
-- (void)dealloc
-{
-[[NSNotificationCenter defaultCenter] removeObserver:self];
+    self.canScroll = YES;
+    self.webVC.vcCanScroll = NO;
 }
 - (SFHalfPageViewController *)webVC{
-if (_webVC == nil) {
-_webVC = [[SFHalfPageViewController alloc] init];
-_webVC.mediaId = @"1234";    //账号 ID
-_webVC.mLocationId = @"1234"; //媒体内容位 ID
-_webVC.vcCanScroll = NO;
-}
-return _webVC;
+    if (_webVC == nil) {
+        _webVC = [[SFHalfPageViewController alloc] init];
+        _webVC.mediaId = @"4";
+        _webVC.mLocationId = @"3";
+        _webVC.vcCanScroll = NO;
+        _webVC.halfDelegate = self;
+        _webVC.isShowAllChannels = self.isShowAll;
+    }
+    return _webVC;
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-CGFloat offset = scrollView.contentOffset.y;
-CGFloat bottomCellOffset = 300 - StatusBarAndNavigationBarHeight;
-if (offset >= bottomCellOffset) {
-scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
-if (self.canScroll) {
-self.canScroll = NO;
-self.webVC.vcCanScroll = YES;
+    CGFloat offset = scrollView.contentOffset.y;
+    CGFloat bottomCellOffset = 300 - StatusBarAndNavigationBarHeight;
+    if (offset >= bottomCellOffset) {
+        scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
+        if (self.canScroll) {
+            self.canScroll = NO;
+            self.webVC.vcCanScroll = YES;
+        }
+    }else{
+        if (!self.canScroll) {//子视图没到顶部
+            scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
+        }
+    }
+    self.scrollView.showsVerticalScrollIndicator = _canScroll?YES:NO;
 }
-}else{
-if (!self.canScroll) {//子视图没到顶部
-scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
+#pragma mark - SFPageViewControllerDelegate
+- (void)newsDataRefreshSuccess{
+    NSLog(@"数据加载成功");
 }
-}
-self.scrollView.showsVerticalScrollIndicator = _canScroll?YES:NO;
+- (void)newsDataRefreshFail:(NSError *)error{
+    NSLog(@"数据加载失败，error = %@",error);
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
+}
 ```
+
+##### **b. tableView 的 Demo** 
+
+> ##### (isShowAllChannels ： YES -> 所有频道 ; NO -> 只有一个推荐频道)
+
+```
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.canScroll = YES;
+    // Do any additional setup after loading the view.
+    [self addChildViewController:self.webVC];
+    [self.view addSubview:self.tableView];
+    
+    //添加请求数据的 HUD 开始请求推荐数据
+    [self.webVC refreshNewsData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollStatus) name:LEAVETOPNOTIFITION object:nil];
+    
+}
+- (void)changeScrollStatus//改变主视图的状态
+{
+    self.canScroll = YES;
+    self.webVC.vcCanScroll = NO;
+}
+- (SFHalfPageViewController *)webVC{
+    if (_webVC == nil) {
+        _webVC = [[SFHalfPageViewController alloc] init];
+        _webVC.mediaId = @"4";
+        _webVC.mLocationId = @"3";
+        _webVC.vcCanScroll = NO;
+        _webVC.halfDelegate = self;
+        _webVC.isShowAllChannels = self.isShowAll;
+    }
+    return _webVC;
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat offset = scrollView.contentOffset.y;
+    CGFloat bottomCellOffset = 300 - StatusBarAndNavigationBarHeight;
+    if (offset >= bottomCellOffset) {
+        self.tableView.contentOffset = CGPointMake(0, bottomCellOffset);
+        if (self.canScroll) {
+            self.canScroll = NO;
+            self.webVC.vcCanScroll = YES;
+        }
+    }else{
+        if (!self.canScroll) {//子视图没到顶部
+            scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
+        }
+    }
+    self.tableView.showsVerticalScrollIndicator = _canScroll?YES:NO;
+}
+- (UIView *)tableViewHeaderView{
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 300)];
+    UILabel *label = [[UILabel alloc] initWithFrame:headView.bounds];
+    label.text = @"这是header~~~~~~~~~~~~~~";
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textColor = [UIColor redColor];
+    [headView addSubview:label];
+    headView.backgroundColor = [UIColor greenColor];
+    return headView;
+}
+
+- (SFTableView *)tableView{
+    if(!_tableView){
+        _tableView = [[SFTableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.rowHeight = self.view.bounds.size.height;
+        _tableView.tableHeaderView = [self tableViewHeaderView];
+        [_tableView registerNib:[UINib nibWithNibName:@"YXFeedAdTableViewCell" bundle:nil] forCellReuseIdentifier:@"YXFeedAdTableViewCell"];
+    }
+    return _tableView;
+}
+#pragma mark - tableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    YXFeedAdTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YXFeedAdTableViewCell" forIndexPath:indexPath];
+    [cell.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    self.webVC.view.frame = CGRectMake(0, 0, self.tableView.bounds.size.width, self.tableView.bounds.size.height);
+    cell.costomView = self.webVC.view;
+    return cell;
+}
+#pragma mark - SFPageViewControllerDelegate
+- (void)newsDataRefreshSuccess{
+    NSLog(@"数据加载成功");
+}
+- (void)newsDataRefreshFail:(NSError *)error{
+    NSLog(@"数据加载失败，error = %@",error);
+}
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
+}
+```
+
+
 
 ## 附录
 

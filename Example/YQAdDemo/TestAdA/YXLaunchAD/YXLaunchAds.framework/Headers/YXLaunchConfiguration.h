@@ -65,6 +65,9 @@ static CGFloat const showFinishAnimateTimeDefault = 0.8;
 /** 再网页中点击自定义 View 后将发出通知 */
 static NSString * const CUSTOMCLICKNOTIFITION = @"CustomViewDidClicked";
 
+/** tableView d 滑动到顶部 后将发出通知 */
+static NSString * const LEAVETOPNOTIFITION = @"SFTableViewDidLeaveFromTopNotification";
+
 /** 显示完成动画类型 */
 typedef NS_ENUM(NSInteger , ShowFinishAnimate) {
     /** 无动画 */

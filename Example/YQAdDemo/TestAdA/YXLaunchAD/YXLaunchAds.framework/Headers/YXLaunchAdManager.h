@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "YXLaunchConfiguration.h"
-#import "SFObject.h"
 
 //广告代理
 @protocol YXLaunchAdManagerDelegate <NSObject>
@@ -56,7 +55,7 @@
 
 @end
 
-@interface YXLaunchAdManager : SFObject
+@interface YXLaunchAdManager : NSObject
 /**
  初始化方法
 
@@ -102,8 +101,6 @@
 
 /** 图片广告缩放模式(default UIViewContentModeScaleToFill) */
 @property(nonatomic,assign)UIViewContentMode contentMode;
-
-@property (nonatomic,strong) UIView * _Nullable skipLeftView;
 
 /** 自定义跳过按钮 (不再使用) */
 @property (nonatomic,strong) UIView * _Nullable customSkipView;

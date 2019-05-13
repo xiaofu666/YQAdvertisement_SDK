@@ -10,7 +10,6 @@
 #import <Foundation/Foundation.h>
 #import "YXLaunchConfiguration.h"
 #import "YXFeedAdData.h"
-#import "SFObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @protocol YXMutBannerAdManagerDelegate<NSObject>
@@ -31,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)didClickedMutBannerAdWithIndex:(NSInteger)index;
 
 @end
-@interface YXMutBannerAdManager : SFObject
+@interface YXMutBannerAdManager : NSObject
 
 @property(nonatomic,weak) id<YXMutBannerAdManagerDelegate> delegate;
 
@@ -49,6 +48,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**  媒体位Id  */
 @property (nonatomic,copy) NSString *mediaId;
 
+/** 是否只显示图片 */
+@property (nonatomic, assign) BOOL isOnlyImage;
+
 /**
  广告数量 默认为1
  */
@@ -64,6 +66,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 占位图，用于网络未加载到图片时 */
 @property (nonatomic, strong) UIImage *placeholderImage;
+
+/** 轮播 View 的底色 */
+@property (nonatomic, strong) UIImage *backgroundImage;
 
 /** 自动滚动间隔时间,默认2s */
 @property (nonatomic, assign) CGFloat autoScrollTimeInterval;

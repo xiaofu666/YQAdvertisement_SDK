@@ -25,3 +25,5 @@ FOUNDATION_EXPORT const unsigned char YXLaunchAdsVersionString[];
 #import <YXLaunchAds/YXAdSDKManager.h>
 #import <YXLaunchAds/YXMotivationVideoManager.h>
 #import <YXLaunchAds/YXMutBannerAdManager.h>
+#import <YXLaunchAds/SFInformationViewController.h>
+#import <YXLaunchAds/SFHalfPageViewController.h>

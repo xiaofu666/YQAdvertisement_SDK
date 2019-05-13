@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "YXLaunchConfiguration.h"
-#import "SFView.h"
 
 @protocol YXBannerAdManagerDelegate<NSObject>
 @optional
@@ -33,7 +32,7 @@
 
 @end
 
-@interface YXBannerAdManager : SFView
+@interface YXBannerAdManager : UIView
 
 /**
  banner尺寸   如果不设置。默认使用当前view的bounds

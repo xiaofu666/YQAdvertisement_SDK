@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "YXLaunchConfiguration.h"
-#import "SFView.h"
 
 @protocol YXIconAdManagerDelegate<NSObject>
 @optional
@@ -33,7 +32,7 @@
 @end
 
 
-@interface YXIconAdManager : SFView
+@interface YXIconAdManager : UIView
 
 @property (nonatomic,weak) id<YXIconAdManagerDelegate> _Nullable delegate;
 
