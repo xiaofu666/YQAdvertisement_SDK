@@ -8,7 +8,7 @@
 
 #import "YXHalfLaunchScreenViewController.h"
 
-#import <YXLaunchAds/YXLaunchAdManager.h>
+#import <YXLaunchAds/YXLaunchAds.h>
 #import "AppDelegate.h"
 @interface YXHalfLaunchScreenViewController ()<YXLaunchAdManagerDelegate>
 
@@ -71,6 +71,9 @@
 - (void)didClickedAd
 {
     NSLog(@"广告点击事件");
+}
+- (void)customViewdidClickedAd{
+    NSLog(@"自定义 View 点击事件");
 }
 - (void)didPresentedAd
 {

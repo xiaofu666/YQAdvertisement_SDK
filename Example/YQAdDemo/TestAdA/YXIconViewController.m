@@ -37,18 +37,22 @@ static  NSString * iconMediaID = @"beta_ios_icon";
     
     //多Icon样式
     self.iconAdArray = [[YXIconAdManager alloc]initWithFrame:CGRectMake(100, 300, 40, 40)];
-    self.iconAdArray.mediaIdArray = @[iconMediaID,iconMediaID,iconMediaID];
+    self.iconAdArray.mediaIdArray = @[@"tongx_ios_dwicon",@"tongx_ios_wlicon",@"tongx_ios_syicon"];
     self.iconAdArray.popType = YXPopupMenuDirectionRight;
     self.iconAdArray.adType = YXIconType;
     self.iconAdArray.delegate = self;
+    self.iconAdArray.titleFont = [UIFont systemFontOfSize:12];
+    self.iconAdArray.itemWidth = 60;
+    self.iconAdArray.itemHeight = 80;
+    self.iconAdArray.contentMode = UIViewContentModeScaleAspectFill;
     self.iconAdArray.menuGroundColor = [UIColor orangeColor];
     [self.iconAdArray loadIconAd];
     self.customView = [[UIView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, 300, 80, 80)];
     self.customView.backgroundColor = [UIColor redColor];
     [self.view addSubview:self.customView];
-//    NSString * str = NSStringFromClass([self class]);
+    //    NSString * str = NSStringFromClass([self class]);
     
-//    [HMTAgentSDK postAction:str];
+    //    [HMTAgentSDK postAction:str];
     // Do any additional setup after loading the view from its nib.
 }
 - (void)iconBtnClicked:(UIButton*)sender
@@ -87,7 +91,7 @@ static  NSString * iconMediaID = @"beta_ios_icon";
 {
     NSLog(@"Icon广告点击");
 }
-    
+
 
 - (void)didFailedLoadIconAd:(NSError *)error
 {
@@ -98,7 +102,7 @@ static  NSString * iconMediaID = @"beta_ios_icon";
     
     
     CGFloat KWidth = [UIScreen mainScreen].bounds.size.width;
-//    CGFloat KHeight = [UIScreen mainScreen].bounds.size.height;
+    //    CGFloat KHeight = [UIScreen mainScreen].bounds.size.height;
     
     //返回在横坐标上、纵坐标上拖动了多少像素
     CGPoint point=[rec translationInView:[UIApplication sharedApplication].keyWindow];

@@ -8,5 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @interface YXFeedAdTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) UIView *costomView;
   
 @end

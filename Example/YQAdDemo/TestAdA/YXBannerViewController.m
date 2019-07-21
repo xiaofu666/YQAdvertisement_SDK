@@ -51,25 +51,21 @@ static  NSString * bannerMediaID = @"beta_ios_banner";
     bannerView.delegate = self;
     bannerView.mediaId = bannerMediaID;
     bannerView.bannerType = BottomBannerType;
-    bannerView.adSize = YXAD_Banner600_90;
+    bannerView.adSize = YXAD_BannerCustom;
     [self.view addSubview:bannerView];
     NSLog(@"Banner请求");
     [bannerView loadBannerAD];
 }
-- (void)didLoadBannerAd:(UIView *)adView
+- (void)didLoadBannerAd
 {
     NSLog(@"Banner广告请求成功");
-    
 }
 
-
-- (void)didClickedBannerAd
-{
+- (void)didClickedBannerAd{
     NSLog(@"Banner广告点击");
 }
 
-- (void)didFailedLoadIconAd:(NSError *)error
-{
+- (void)didFailedLoadIconAd:(NSError *)error{
     NSLog(@"Banner广告请求失败");
 }
 
@@ -77,7 +73,6 @@ static  NSString * bannerMediaID = @"beta_ios_banner";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 - (void)dealloc
 {

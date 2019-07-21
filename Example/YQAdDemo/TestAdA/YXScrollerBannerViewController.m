@@ -7,7 +7,8 @@
 //
 
 #import "YXScrollerBannerViewController.h" 
-#import <YXLaunchAds/YXMutBannerAdManager.h>
+#import <YXLaunchAds/YXLaunchAds.h>
+
 static  NSString * feedMediaID = @"beta_ios_native";
 
 @interface YXScrollerBannerViewController ()<YXMutBannerAdManagerDelegate>
@@ -25,10 +26,11 @@ static  NSString * feedMediaID = @"beta_ios_native";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    CGFloat width = self.view.frame.size.width-60;
     //根据宽高比自定义适配
-    CGFloat height = 388 * self.view.frame.size.width / 690;
+    CGFloat height = 388 * width / 690;
     
-    self.BannerView = [[UIView alloc]initWithFrame:CGRectMake(0,100 , self.view.frame.size.width, height)];
+    self.BannerView = [[UIView alloc]initWithFrame:CGRectMake(30,100 , width, height)];
     
     
     [self.view addSubview:self.BannerView];
@@ -50,12 +52,28 @@ static  NSString * feedMediaID = @"beta_ios_native";
 {
     mutBanner = [YXMutBannerAdManager new];
     mutBanner.delegate = self;
-    mutBanner.adSize = YXADSize690X388;
+    mutBanner.adSize = YXADSizeCustom;
+    mutBanner.s2sWidth = 690;
+    mutBanner.s2sHeight = 388;
     mutBanner.controller = self;
-    mutBanner.adCount = 6;
+    mutBanner.adCount = 4;
     mutBanner.placeholderImage = [UIImage imageNamed:@"placeImage"];
     mutBanner.mediaId = feedMediaID;
-    
+//    mutBanner.pageControlAliment = YXBannerScrollViewPageContolAlimentCenter;
+    mutBanner.pageControlStyle = YXBannerScrollViewPageContolStyleClassic;
+//    mutBanner.pageDotColor = UIColor.greenColor;
+//    mutBanner.currentPageDotColor = UIColor.redColor;
+//    mutBanner.pageControlBottomOffset = 100;
+    /*
+     YXBannerScrollViewPageContolStyleClassic,        // 系统自带经典样式
+     YXBannerScrollViewPageContolStyleAnimated,       // 动画效果--直接显示
+     YXBannerScrollViewPageControlHorizontal,         // 水平动态滑块
+     YXBannerScrollViewPageImageRotation,             // 旋转前进
+     YXBannerScrollViewPageImageJump,                 // 以半圆跳跃前进
+     YXBannerScrollViewPageImageAnimated,             // 动画滑动前进
+     YXBannerScrollViewPageContolStyleNone            // 不显示pagecontrol
+     */
+    mutBanner.cornerRadius = 8;
     [mutBanner loadMutBannerAdViewsInView:self.BannerView];
     NSLog(@"请求多图广告");
 }

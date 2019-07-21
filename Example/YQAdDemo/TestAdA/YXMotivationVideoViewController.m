@@ -7,7 +7,6 @@
 //
 
 #import "YXMotivationVideoViewController.h"
-
 #import <YXLaunchAds/YXLaunchAds.h>
 
 @interface YXMotivationVideoViewController ()<YXMotivationDelegate>

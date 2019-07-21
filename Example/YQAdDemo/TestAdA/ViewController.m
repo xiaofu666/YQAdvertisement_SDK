@@ -16,10 +16,13 @@
 
 #import "YXLaunchScreenViewController.h"
 #import "YXIconViewController.h"
-
-#import "YXScrollerBannerViewController.h"
 #import "YXInterstitialViewController.h"
+#import "YXScrollerBannerViewController.h"
+
 #import "YXMotivationVideoViewController.h"
+#import <YXLaunchAds/YXLaunchAds.h>
+#import "HalfViewController.h"
+#import "TableHalfViewController.h"
 
 #define YX_IPHONEX  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
@@ -37,7 +40,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"ADDemo";
-    self.dataArr = @[@"轮播",@"信息流样式",@"横幅样式",@"开屏启动页样式",@"半屏开屏启动页样式",@"icon样式",@"插屏样式",@"激励视频"];
+    self.dataArr = @[@"轮播",@"信息流样式",@"横幅样式",@"开屏启动页样式",@"半屏开屏启动页样式",@"icon样式",@"插屏样式",@"激励视频",@"tableView半屏单频道资讯接入",@"tableView半屏全频道资讯接入",@"scrollView半屏单频道资讯接入",@"scrollView半屏全频道资讯接入",@"全屏资讯接入"];
     
     [self.view addSubview:self.tableView];
 }
@@ -110,6 +113,50 @@ static NSString * cellID = @"CELL";
             break;
         case 6:
             [self.navigationController pushViewController:[YXInterstitialViewController new] animated:YES];
+            break;
+        case 7:
+            [self.navigationController pushViewController:[YXMotivationVideoViewController new] animated:YES];
+            break;
+        case 8:
+        {
+            TableHalfViewController *infoVC = [TableHalfViewController new];
+            infoVC.isShowAll = NO;
+            [self.navigationController pushViewController:infoVC animated:YES];
+            
+        }
+            break;
+        case 9:
+        {
+            TableHalfViewController *infoVC = [TableHalfViewController new];
+            infoVC.isShowAll = YES;
+            [self.navigationController pushViewController:infoVC animated:YES];
+            
+        }
+            break;
+        case 10:
+        {
+            HalfViewController *infoVC = [HalfViewController new];
+            infoVC.isShowAll = NO;
+            [self.navigationController pushViewController:infoVC animated:YES];
+            
+        }
+            break;
+        case 11:
+        {
+            HalfViewController *infoVC = [HalfViewController new];
+            infoVC.isShowAll = YES;
+            [self.navigationController pushViewController:infoVC animated:YES];
+            
+        }
+            break;
+        case 12:
+        {
+            SFInformationViewController *infoVC = [SFInformationViewController new];
+            infoVC.mediaId = @"4";
+            infoVC.mLocationId = @"3";
+            [self.navigationController pushViewController:infoVC animated:YES];
+            
+        }
             break;
         default:
             [self.navigationController pushViewController:[YXMotivationVideoViewController new] animated:YES];
