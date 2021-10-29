@@ -1,0 +1,685 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E70107FC268B228E00ABB3FD /* YXPasterVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70107FB268B228E00ABB3FD /* YXPasterVideoViewController.m */; };
+		E7126B8926A5644E00DF19EE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E7126B8826A5644E00DF19EE /* libsqlite3.tbd */; };
+		E7126B8B26A5646700DF19EE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7126B8A26A5646700DF19EE /* CoreLocation.framework */; };
+		E7126B8D26A5646C00DF19EE /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7126B8C26A5646C00DF19EE /* CoreMotion.framework */; };
+		E7918501271EBB61005332DB /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79184FD271EBB61005332DB /* BUAdSDK.framework */; };
+		E7918502271EBB61005332DB /* BUCNAuxiliary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79184FE271EBB61005332DB /* BUCNAuxiliary.framework */; };
+		E7918503271EBB61005332DB /* BUFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79184FF271EBB61005332DB /* BUFoundation.framework */; };
+		E7918504271EBB61005332DB /* BUAdSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7918500271EBB61005332DB /* BUAdSDK.bundle */; };
+		E79E971D26734074002F9B33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E971C26734074002F9B33 /* AppDelegate.m */; };
+		E79E972326734074002F9B33 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E972226734074002F9B33 /* ViewController.m */; };
+		E79E97282673408B002F9B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E79E97272673408B002F9B33 /* Assets.xcassets */; };
+		E79E972B2673408B002F9B33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79E97292673408B002F9B33 /* LaunchScreen.storyboard */; };
+		E79E972E2673408B002F9B33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E972D2673408B002F9B33 /* main.m */; };
+		E79E9CA426734184002F9B33 /* YXIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E9C8726734183002F9B33 /* YXIconViewController.m */; };
+		E79E9CA526734184002F9B33 /* YXMotivationVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E9C8A26734183002F9B33 /* YXMotivationVideoViewController.m */; };
+		E79E9CA726734184002F9B33 /* YXFeedAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E9C8D26734183002F9B33 /* YXFeedAdViewController.m */; };
+		E79E9CA826734184002F9B33 /* YXBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E9C8F26734183002F9B33 /* YXBannerViewController.m */; };
+		E79E9CA926734184002F9B33 /* ADTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79E9C9226734183002F9B33 /* ADTableViewCell.xib */; };
+		E79E9CAA26734184002F9B33 /* YXNativeExpressAdController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E9C9326734183002F9B33 /* YXNativeExpressAdController.m */; };
+		E79E9CAB26734184002F9B33 /* YXDrawVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E9C9426734183002F9B33 /* YXDrawVideoViewController.m */; };
+		E79E9CAC26734184002F9B33 /* YXLaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E9C9526734183002F9B33 /* YXLaunchScreenViewController.m */; };
+		E79E9CAD26734184002F9B33 /* YXScrollerBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E9C9626734183002F9B33 /* YXScrollerBannerViewController.m */; };
+		E79E9CAE26734184002F9B33 /* YXInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E9C9926734184002F9B33 /* YXInterstitialViewController.m */; };
+		E79E9CAF26734184002F9B33 /* ADTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E9C9A26734184002F9B33 /* ADTableViewCell.m */; };
+		E79E9CB126734184002F9B33 /* YXHalfLaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E9CA126734184002F9B33 /* YXHalfLaunchScreenViewController.m */; };
+		E79E9CD326734903002F9B33 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E79E9CD226734903002F9B33 /* libiconv.tbd */; };
+		E79E9CD52673490B002F9B33 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E79E9CD42673490B002F9B33 /* libxml2.tbd */; };
+		E79E9CD726734911002F9B33 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E79E9CD626734911002F9B33 /* libbz2.tbd */; };
+		E79E9CD926734919002F9B33 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E79E9CD826734919002F9B33 /* libz.tbd */; };
+		E79E9CDB26734927002F9B33 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E79E9CDA26734926002F9B33 /* libc++.tbd */; };
+		E79E9CDD26734930002F9B33 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E79E9CDC26734930002F9B33 /* libresolv.9.tbd */; };
+		E79E9FFE26735F3E002F9B33 /* XibAndPng.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E79E9EE726735F3E002F9B33 /* XibAndPng.bundle */; };
+		E7A3104826AAA26F00CF635F /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A3103C26AAA26E00CF635F /* libGDTMobSDK.a */; };
+		E7A3104926AAA26F00CF635F /* KSAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A3104726AAA26F00CF635F /* KSAdSDK.framework */; };
+		E7A3104A26AAA27C00CF635F /* KSAdSDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7A3104726AAA26F00CF635F /* KSAdSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7A3104E26AAA2E900CF635F /* YXLaunchAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A3104D26AAA2E900CF635F /* YXLaunchAds.framework */; };
+		E7BC051526B7AB210023789B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79E9CE026734AE9002F9B33 /* AssetsLibrary.framework */; };
+		E7BC051626B7AB270023789B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79E9CE726734C03002F9B33 /* MapKit.framework */; };
+		E7EA517B26EF27CC009C1D26 /* JADYun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7EA517A26EF27CC009C1D26 /* JADYun.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E79E9CCE267347AF002F9B33 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E7A3104A26AAA27C00CF635F /* KSAdSDK.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E70107FA268B228D00ABB3FD /* YXPasterVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPasterVideoViewController.h; sourceTree = "<group>"; };
+		E70107FB268B228E00ABB3FD /* YXPasterVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPasterVideoViewController.m; sourceTree = "<group>"; };
+		E7126B8826A5644E00DF19EE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		E7126B8A26A5646700DF19EE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E7126B8C26A5646C00DF19EE /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		E79184FD271EBB61005332DB /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUAdSDK.framework; sourceTree = "<group>"; };
+		E79184FE271EBB61005332DB /* BUCNAuxiliary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUCNAuxiliary.framework; sourceTree = "<group>"; };
+		E79184FF271EBB61005332DB /* BUFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUFoundation.framework; sourceTree = "<group>"; };
+		E7918500271EBB61005332DB /* BUAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BUAdSDK.bundle; sourceTree = "<group>"; };
+		E79E971826734074002F9B33 /* AdDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E79E971B26734074002F9B33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E79E971C26734074002F9B33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E79E972126734074002F9B33 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E79E972226734074002F9B33 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E79E97272673408B002F9B33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E79E972A2673408B002F9B33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E79E972C2673408B002F9B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E79E972D2673408B002F9B33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E79E9C8726734183002F9B33 /* YXIconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXIconViewController.m; sourceTree = "<group>"; };
+		E79E9C8826734183002F9B33 /* YXScrollerBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXScrollerBannerViewController.h; sourceTree = "<group>"; };
+		E79E9C8A26734183002F9B33 /* YXMotivationVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMotivationVideoViewController.m; sourceTree = "<group>"; };
+		E79E9C8B26734183002F9B33 /* YXHalfLaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXHalfLaunchScreenViewController.h; sourceTree = "<group>"; };
+		E79E9C8D26734183002F9B33 /* YXFeedAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdViewController.m; sourceTree = "<group>"; };
+		E79E9C8F26734183002F9B33 /* YXBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXBannerViewController.m; sourceTree = "<group>"; };
+		E79E9C9026734183002F9B33 /* YXFeedAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFeedAdViewController.h; sourceTree = "<group>"; };
+		E79E9C9126734183002F9B33 /* YXLaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchScreenViewController.h; sourceTree = "<group>"; };
+		E79E9C9226734183002F9B33 /* ADTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADTableViewCell.xib; sourceTree = "<group>"; };
+		E79E9C9326734183002F9B33 /* YXNativeExpressAdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXNativeExpressAdController.m; sourceTree = "<group>"; };
+		E79E9C9426734183002F9B33 /* YXDrawVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXDrawVideoViewController.m; sourceTree = "<group>"; };
+		E79E9C9526734183002F9B33 /* YXLaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchScreenViewController.m; sourceTree = "<group>"; };
+		E79E9C9626734183002F9B33 /* YXScrollerBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXScrollerBannerViewController.m; sourceTree = "<group>"; };
+		E79E9C9826734183002F9B33 /* YXBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXBannerViewController.h; sourceTree = "<group>"; };
+		E79E9C9926734184002F9B33 /* YXInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXInterstitialViewController.m; sourceTree = "<group>"; };
+		E79E9C9A26734184002F9B33 /* ADTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADTableViewCell.m; sourceTree = "<group>"; };
+		E79E9C9B26734184002F9B33 /* YXInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXInterstitialViewController.h; sourceTree = "<group>"; };
+		E79E9C9C26734184002F9B33 /* YXNativeExpressAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXNativeExpressAdController.h; sourceTree = "<group>"; };
+		E79E9C9D26734184002F9B33 /* YXDrawVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXDrawVideoViewController.h; sourceTree = "<group>"; };
+		E79E9C9F26734184002F9B33 /* YXMotivationVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMotivationVideoViewController.h; sourceTree = "<group>"; };
+		E79E9CA026734184002F9B33 /* YXIconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXIconViewController.h; sourceTree = "<group>"; };
+		E79E9CA126734184002F9B33 /* YXHalfLaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXHalfLaunchScreenViewController.m; sourceTree = "<group>"; };
+		E79E9CA326734184002F9B33 /* ADTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADTableViewCell.h; sourceTree = "<group>"; };
+		E79E9CD226734903002F9B33 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		E79E9CD42673490B002F9B33 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		E79E9CD626734911002F9B33 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		E79E9CD826734919002F9B33 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E79E9CDA26734926002F9B33 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		E79E9CDC26734930002F9B33 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		E79E9CDE267349BD002F9B33 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		E79E9CE026734AE9002F9B33 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		E79E9CE226734B89002F9B33 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		E79E9CE526734BE0002F9B33 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		E79E9CE726734C03002F9B33 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E79E9EE726735F3E002F9B33 /* XibAndPng.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XibAndPng.bundle; sourceTree = "<group>"; };
+		E7A3102426AAA26E00CF635F /* GDTRewardVideoAdNetworkAdapterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTRewardVideoAdNetworkAdapterProtocol.h; sourceTree = "<group>"; };
+		E7A3102526AAA26E00CF635F /* GDTNativeExpressAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAdView.h; sourceTree = "<group>"; };
+		E7A3102626AAA26E00CF635F /* GDTSplashAdNetworkConnectorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAdNetworkConnectorProtocol.h; sourceTree = "<group>"; };
+		E7A3102726AAA26E00CF635F /* GDTAdParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTAdParams.h; sourceTree = "<group>"; };
+		E7A3102826AAA26E00CF635F /* GDTUnifiedInterstitialAdNetworkAdapterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedInterstitialAdNetworkAdapterProtocol.h; sourceTree = "<group>"; };
+		E7A3102926AAA26E00CF635F /* GDTAdTestSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTAdTestSetting.h; sourceTree = "<group>"; };
+		E7A3102A26AAA26E00CF635F /* GDTUnifiedBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedBannerView.h; sourceTree = "<group>"; };
+		E7A3102B26AAA26E00CF635F /* GDTServerSideVerificationOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTServerSideVerificationOptions.h; sourceTree = "<group>"; };
+		E7A3102C26AAA26E00CF635F /* GDTSDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKConfig.h; sourceTree = "<group>"; };
+		E7A3102D26AAA26E00CF635F /* GDTBaseAdNetworkAdapterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTBaseAdNetworkAdapterProtocol.h; sourceTree = "<group>"; };
+		E7A3102E26AAA26E00CF635F /* GDTExpressInterstitialAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTExpressInterstitialAd.h; sourceTree = "<group>"; };
+		E7A3102F26AAA26E00CF635F /* GDTRewardVideoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTRewardVideoAd.h; sourceTree = "<group>"; };
+		E7A3103026AAA26E00CF635F /* GDTUnifiedNativeAdNetworkConnectorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdNetworkConnectorProtocol.h; sourceTree = "<group>"; };
+		E7A3103126AAA26E00CF635F /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
+		E7A3103226AAA26E00CF635F /* GDTNativeExpressAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAd.h; sourceTree = "<group>"; };
+		E7A3103326AAA26E00CF635F /* GDTLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTLogoView.h; sourceTree = "<group>"; };
+		E7A3103426AAA26E00CF635F /* GDTUnifiedInterstitialAdNetworkConnectorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedInterstitialAdNetworkConnectorProtocol.h; sourceTree = "<group>"; };
+		E7A3103526AAA26E00CF635F /* GDTMediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMediaView.h; sourceTree = "<group>"; };
+		E7A3103626AAA26E00CF635F /* GDTUnifiedNativeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdView.h; sourceTree = "<group>"; };
+		E7A3103726AAA26E00CF635F /* GDTNativeExpressRewardVideoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressRewardVideoAd.h; sourceTree = "<group>"; };
+		E7A3103826AAA26E00CF635F /* GDTHybridAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTHybridAd.h; sourceTree = "<group>"; };
+		E7A3103926AAA26E00CF635F /* GDTUnifiedNativeAdDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdDataObject.h; sourceTree = "<group>"; };
+		E7A3103A26AAA26E00CF635F /* GDTSDKDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKDefines.h; sourceTree = "<group>"; };
+		E7A3103B26AAA26E00CF635F /* GDTUnifiedInterstitialAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedInterstitialAd.h; sourceTree = "<group>"; };
+		E7A3103C26AAA26E00CF635F /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
+		E7A3103D26AAA26E00CF635F /* GDTNativeExpressProAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressProAdView.h; sourceTree = "<group>"; };
+		E7A3103E26AAA26E00CF635F /* GDTLoadAdParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTLoadAdParams.h; sourceTree = "<group>"; };
+		E7A3103F26AAA26F00CF635F /* GDTUnifiedNativeAdNetworkAdapterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdNetworkAdapterProtocol.h; sourceTree = "<group>"; };
+		E7A3104026AAA26F00CF635F /* GDTSplashZoomOutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashZoomOutView.h; sourceTree = "<group>"; };
+		E7A3104126AAA26F00CF635F /* GDTRewardVideoAdNetworkConnectorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTRewardVideoAdNetworkConnectorProtocol.h; sourceTree = "<group>"; };
+		E7A3104226AAA26F00CF635F /* GDTSplashAdNetworkAdapterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAdNetworkAdapterProtocol.h; sourceTree = "<group>"; };
+		E7A3104326AAA26F00CF635F /* GDTNativeExpressProAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressProAdManager.h; sourceTree = "<group>"; };
+		E7A3104426AAA26F00CF635F /* GDTUnifiedNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAd.h; sourceTree = "<group>"; };
+		E7A3104526AAA26F00CF635F /* GDTVideoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTVideoConfig.h; sourceTree = "<group>"; };
+		E7A3104726AAA26F00CF635F /* KSAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KSAdSDK.framework; sourceTree = "<group>"; };
+		E7A3104D26AAA2E900CF635F /* YXLaunchAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YXLaunchAds.framework; sourceTree = "<group>"; };
+		E7EA517A26EF27CC009C1D26 /* JADYun.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JADYun.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E79E971526734074002F9B33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7BC051626B7AB270023789B /* MapKit.framework in Frameworks */,
+				E7EA517B26EF27CC009C1D26 /* JADYun.framework in Frameworks */,
+				E7BC051526B7AB210023789B /* AssetsLibrary.framework in Frameworks */,
+				E7126B8D26A5646C00DF19EE /* CoreMotion.framework in Frameworks */,
+				E7126B8B26A5646700DF19EE /* CoreLocation.framework in Frameworks */,
+				E7126B8926A5644E00DF19EE /* libsqlite3.tbd in Frameworks */,
+				E79E9CDD26734930002F9B33 /* libresolv.9.tbd in Frameworks */,
+				E79E9CDB26734927002F9B33 /* libc++.tbd in Frameworks */,
+				E7A3104E26AAA2E900CF635F /* YXLaunchAds.framework in Frameworks */,
+				E79E9CD926734919002F9B33 /* libz.tbd in Frameworks */,
+				E7A3104826AAA26F00CF635F /* libGDTMobSDK.a in Frameworks */,
+				E7918501271EBB61005332DB /* BUAdSDK.framework in Frameworks */,
+				E7918502271EBB61005332DB /* BUCNAuxiliary.framework in Frameworks */,
+				E79E9CD726734911002F9B33 /* libbz2.tbd in Frameworks */,
+				E7918503271EBB61005332DB /* BUFoundation.framework in Frameworks */,
+				E79E9CD52673490B002F9B33 /* libxml2.tbd in Frameworks */,
+				E79E9CD326734903002F9B33 /* libiconv.tbd in Frameworks */,
+				E7A3104926AAA26F00CF635F /* KSAdSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E709F90526CFBCB400CBEDE4 /* jdAD */ = {
+			isa = PBXGroup;
+			children = (
+				E7EA517A26EF27CC009C1D26 /* JADYun.framework */,
+			);
+			path = jdAD;
+			sourceTree = "<group>";
+		};
+		E79184FC271EBB61005332DB /* ChuanAD */ = {
+			isa = PBXGroup;
+			children = (
+				E79184FD271EBB61005332DB /* BUAdSDK.framework */,
+				E79184FE271EBB61005332DB /* BUCNAuxiliary.framework */,
+				E79184FF271EBB61005332DB /* BUFoundation.framework */,
+				E7918500271EBB61005332DB /* BUAdSDK.bundle */,
+			);
+			path = ChuanAD;
+			sourceTree = "<group>";
+		};
+		E79E970F26734074002F9B33 = {
+			isa = PBXGroup;
+			children = (
+				E79E971A26734074002F9B33 /* AdDemo */,
+				E79E971926734074002F9B33 /* Products */,
+				E79E9CD126734903002F9B33 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E79E971926734074002F9B33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E79E971826734074002F9B33 /* AdDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E79E971A26734074002F9B33 /* AdDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E79E9EE826735F3E002F9B33 /* ThirdAdLibs */,
+				E79E9EE526735F3E002F9B33 /* YXLaunchAD */,
+				E79E971B26734074002F9B33 /* AppDelegate.h */,
+				E79E971C26734074002F9B33 /* AppDelegate.m */,
+				E79E972126734074002F9B33 /* ViewController.h */,
+				E79E972226734074002F9B33 /* ViewController.m */,
+				E79E9C9126734183002F9B33 /* YXLaunchScreenViewController.h */,
+				E79E9C9526734183002F9B33 /* YXLaunchScreenViewController.m */,
+				E79E9C8B26734183002F9B33 /* YXHalfLaunchScreenViewController.h */,
+				E79E9CA126734184002F9B33 /* YXHalfLaunchScreenViewController.m */,
+				E79E9C8826734183002F9B33 /* YXScrollerBannerViewController.h */,
+				E79E9C9626734183002F9B33 /* YXScrollerBannerViewController.m */,
+				E79E9C9826734183002F9B33 /* YXBannerViewController.h */,
+				E79E9C8F26734183002F9B33 /* YXBannerViewController.m */,
+				E79E9CA026734184002F9B33 /* YXIconViewController.h */,
+				E79E9C8726734183002F9B33 /* YXIconViewController.m */,
+				E79E9C9B26734184002F9B33 /* YXInterstitialViewController.h */,
+				E79E9C9926734184002F9B33 /* YXInterstitialViewController.m */,
+				E79E9CA326734184002F9B33 /* ADTableViewCell.h */,
+				E79E9C9A26734184002F9B33 /* ADTableViewCell.m */,
+				E79E9C9226734183002F9B33 /* ADTableViewCell.xib */,
+				E79E9C9026734183002F9B33 /* YXFeedAdViewController.h */,
+				E79E9C8D26734183002F9B33 /* YXFeedAdViewController.m */,
+				E79E9C9C26734184002F9B33 /* YXNativeExpressAdController.h */,
+				E79E9C9326734183002F9B33 /* YXNativeExpressAdController.m */,
+				E79E9C9F26734184002F9B33 /* YXMotivationVideoViewController.h */,
+				E79E9C8A26734183002F9B33 /* YXMotivationVideoViewController.m */,
+				E79E9C9D26734184002F9B33 /* YXDrawVideoViewController.h */,
+				E79E9C9426734183002F9B33 /* YXDrawVideoViewController.m */,
+				E70107FA268B228D00ABB3FD /* YXPasterVideoViewController.h */,
+				E70107FB268B228E00ABB3FD /* YXPasterVideoViewController.m */,
+				E79E97272673408B002F9B33 /* Assets.xcassets */,
+				E79E97292673408B002F9B33 /* LaunchScreen.storyboard */,
+				E79E972C2673408B002F9B33 /* Info.plist */,
+				E79E972D2673408B002F9B33 /* main.m */,
+			);
+			path = AdDemo;
+			sourceTree = "<group>";
+		};
+		E79E9CD126734903002F9B33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7126B8C26A5646C00DF19EE /* CoreMotion.framework */,
+				E7126B8A26A5646700DF19EE /* CoreLocation.framework */,
+				E7126B8826A5644E00DF19EE /* libsqlite3.tbd */,
+				E79E9CE726734C03002F9B33 /* MapKit.framework */,
+				E79E9CE526734BE0002F9B33 /* Accelerate.framework */,
+				E79E9CE226734B89002F9B33 /* Photos.framework */,
+				E79E9CE026734AE9002F9B33 /* AssetsLibrary.framework */,
+				E79E9CDE267349BD002F9B33 /* ImageIO.framework */,
+				E79E9CDC26734930002F9B33 /* libresolv.9.tbd */,
+				E79E9CDA26734926002F9B33 /* libc++.tbd */,
+				E79E9CD826734919002F9B33 /* libz.tbd */,
+				E79E9CD626734911002F9B33 /* libbz2.tbd */,
+				E79E9CD42673490B002F9B33 /* libxml2.tbd */,
+				E79E9CD226734903002F9B33 /* libiconv.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E79E9EE526735F3E002F9B33 /* YXLaunchAD */ = {
+			isa = PBXGroup;
+			children = (
+				E7A3104D26AAA2E900CF635F /* YXLaunchAds.framework */,
+				E79E9EE726735F3E002F9B33 /* XibAndPng.bundle */,
+			);
+			path = YXLaunchAD;
+			sourceTree = "<group>";
+		};
+		E79E9EE826735F3E002F9B33 /* ThirdAdLibs */ = {
+			isa = PBXGroup;
+			children = (
+				E79184FC271EBB61005332DB /* ChuanAD */,
+				E709F90526CFBCB400CBEDE4 /* jdAD */,
+				E7A3102326AAA26E00CF635F /* gdtAD */,
+				E7A3104626AAA26F00CF635F /* ksAD */,
+			);
+			path = ThirdAdLibs;
+			sourceTree = "<group>";
+		};
+		E7A3102326AAA26E00CF635F /* gdtAD */ = {
+			isa = PBXGroup;
+			children = (
+				E7A3102426AAA26E00CF635F /* GDTRewardVideoAdNetworkAdapterProtocol.h */,
+				E7A3102526AAA26E00CF635F /* GDTNativeExpressAdView.h */,
+				E7A3102626AAA26E00CF635F /* GDTSplashAdNetworkConnectorProtocol.h */,
+				E7A3102726AAA26E00CF635F /* GDTAdParams.h */,
+				E7A3102826AAA26E00CF635F /* GDTUnifiedInterstitialAdNetworkAdapterProtocol.h */,
+				E7A3102926AAA26E00CF635F /* GDTAdTestSetting.h */,
+				E7A3102A26AAA26E00CF635F /* GDTUnifiedBannerView.h */,
+				E7A3102B26AAA26E00CF635F /* GDTServerSideVerificationOptions.h */,
+				E7A3102C26AAA26E00CF635F /* GDTSDKConfig.h */,
+				E7A3102D26AAA26E00CF635F /* GDTBaseAdNetworkAdapterProtocol.h */,
+				E7A3102E26AAA26E00CF635F /* GDTExpressInterstitialAd.h */,
+				E7A3102F26AAA26E00CF635F /* GDTRewardVideoAd.h */,
+				E7A3103026AAA26E00CF635F /* GDTUnifiedNativeAdNetworkConnectorProtocol.h */,
+				E7A3103126AAA26E00CF635F /* GDTSplashAd.h */,
+				E7A3103226AAA26E00CF635F /* GDTNativeExpressAd.h */,
+				E7A3103326AAA26E00CF635F /* GDTLogoView.h */,
+				E7A3103426AAA26E00CF635F /* GDTUnifiedInterstitialAdNetworkConnectorProtocol.h */,
+				E7A3103526AAA26E00CF635F /* GDTMediaView.h */,
+				E7A3103626AAA26E00CF635F /* GDTUnifiedNativeAdView.h */,
+				E7A3103726AAA26E00CF635F /* GDTNativeExpressRewardVideoAd.h */,
+				E7A3103826AAA26E00CF635F /* GDTHybridAd.h */,
+				E7A3103926AAA26E00CF635F /* GDTUnifiedNativeAdDataObject.h */,
+				E7A3103A26AAA26E00CF635F /* GDTSDKDefines.h */,
+				E7A3103B26AAA26E00CF635F /* GDTUnifiedInterstitialAd.h */,
+				E7A3103C26AAA26E00CF635F /* libGDTMobSDK.a */,
+				E7A3103D26AAA26E00CF635F /* GDTNativeExpressProAdView.h */,
+				E7A3103E26AAA26E00CF635F /* GDTLoadAdParams.h */,
+				E7A3103F26AAA26F00CF635F /* GDTUnifiedNativeAdNetworkAdapterProtocol.h */,
+				E7A3104026AAA26F00CF635F /* GDTSplashZoomOutView.h */,
+				E7A3104126AAA26F00CF635F /* GDTRewardVideoAdNetworkConnectorProtocol.h */,
+				E7A3104226AAA26F00CF635F /* GDTSplashAdNetworkAdapterProtocol.h */,
+				E7A3104326AAA26F00CF635F /* GDTNativeExpressProAdManager.h */,
+				E7A3104426AAA26F00CF635F /* GDTUnifiedNativeAd.h */,
+				E7A3104526AAA26F00CF635F /* GDTVideoConfig.h */,
+			);
+			path = gdtAD;
+			sourceTree = "<group>";
+		};
+		E7A3104626AAA26F00CF635F /* ksAD */ = {
+			isa = PBXGroup;
+			children = (
+				E7A3104726AAA26F00CF635F /* KSAdSDK.framework */,
+			);
+			path = ksAD;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E79E971726734074002F9B33 /* AdDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E79E97312673408B002F9B33 /* Build configuration list for PBXNativeTarget "AdDemo" */;
+			buildPhases = (
+				E79E971426734074002F9B33 /* Sources */,
+				E79E971526734074002F9B33 /* Frameworks */,
+				E79E971626734074002F9B33 /* Resources */,
+				E79E9CCE267347AF002F9B33 /* CopyFiles */,
+				E79E9CD0267347C0002F9B33 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdDemo;
+			productName = AdDemo;
+			productReference = E79E971826734074002F9B33 /* AdDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E79E971026734074002F9B33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					E79E971726734074002F9B33 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = E79E971326734074002F9B33 /* Build configuration list for PBXProject "AdDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E79E970F26734074002F9B33;
+			productRefGroup = E79E971926734074002F9B33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E79E971726734074002F9B33 /* AdDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E79E971626734074002F9B33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E79E972B2673408B002F9B33 /* LaunchScreen.storyboard in Resources */,
+				E79E9FFE26735F3E002F9B33 /* XibAndPng.bundle in Resources */,
+				E79E97282673408B002F9B33 /* Assets.xcassets in Resources */,
+				E79E9CA926734184002F9B33 /* ADTableViewCell.xib in Resources */,
+				E7918504271EBB61005332DB /* BUAdSDK.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E79E9CD0267347C0002F9B33 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E79E971426734074002F9B33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E79E972326734074002F9B33 /* ViewController.m in Sources */,
+				E79E9CB126734184002F9B33 /* YXHalfLaunchScreenViewController.m in Sources */,
+				E79E9CAA26734184002F9B33 /* YXNativeExpressAdController.m in Sources */,
+				E79E9CAF26734184002F9B33 /* ADTableViewCell.m in Sources */,
+				E79E9CAC26734184002F9B33 /* YXLaunchScreenViewController.m in Sources */,
+				E79E9CA526734184002F9B33 /* YXMotivationVideoViewController.m in Sources */,
+				E79E9CA426734184002F9B33 /* YXIconViewController.m in Sources */,
+				E79E9CAE26734184002F9B33 /* YXInterstitialViewController.m in Sources */,
+				E79E9CA826734184002F9B33 /* YXBannerViewController.m in Sources */,
+				E79E9CAD26734184002F9B33 /* YXScrollerBannerViewController.m in Sources */,
+				E79E9CA726734184002F9B33 /* YXFeedAdViewController.m in Sources */,
+				E70107FC268B228E00ABB3FD /* YXPasterVideoViewController.m in Sources */,
+				E79E971D26734074002F9B33 /* AppDelegate.m in Sources */,
+				E79E972E2673408B002F9B33 /* main.m in Sources */,
+				E79E9CAB26734184002F9B33 /* YXDrawVideoViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E79E97292673408B002F9B33 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E79E972A2673408B002F9B33 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E79E972F2673408B002F9B33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E79E97302673408B002F9B33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E79E97322673408B002F9B33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NN56R38BZT;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AdDemo/YXLaunchAD",
+					"$(PROJECT_DIR)/AdDemo/ThirdAdLibs/ksAD",
+					"$(PROJECT_DIR)/AdDemo/ThirdAdLibs/jdAD",
+					"$(PROJECT_DIR)/AdDemo/ThirdAdLibs/ChuanAD",
+				);
+				INFOPLIST_FILE = AdDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AdDemo/ThirdAdLibs/gdtAD",
+				);
+				OTHER_LDFLAGS = (
+					"-l\"c++abi\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jd.sdkceshiios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E79E97332673408B002F9B33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NN56R38BZT;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AdDemo/YXLaunchAD",
+					"$(PROJECT_DIR)/AdDemo/ThirdAdLibs/ksAD",
+					"$(PROJECT_DIR)/AdDemo/ThirdAdLibs/jdAD",
+					"$(PROJECT_DIR)/AdDemo/ThirdAdLibs/ChuanAD",
+				);
+				INFOPLIST_FILE = AdDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AdDemo/ThirdAdLibs/gdtAD",
+				);
+				OTHER_LDFLAGS = (
+					"-l\"c++abi\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jd.sdkceshiios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E79E971326734074002F9B33 /* Build configuration list for PBXProject "AdDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E79E972F2673408B002F9B33 /* Debug */,
+				E79E97302673408B002F9B33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E79E97312673408B002F9B33 /* Build configuration list for PBXNativeTarget "AdDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E79E97322673408B002F9B33 /* Debug */,
+				E79E97332673408B002F9B33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E79E971026734074002F9B33 /* Project object */;
+}
