@@ -158,47 +158,35 @@
 #### 1.2.2.3 添加依赖库
 工程需要在TARGETS -> Build Phases中找到Link Binary With Libraries，点击“+”，依次添加下列依赖库	
 
-- MapKit.framework
-
-- AssetsLibrary.framework
-
-- JavaScriptCore.framework 
-
 - libresolv.9.tbd
-
 - libc++.tbd
-
+- libc++abi.tbd
 - libz.tbd
-
 - libbz2.tbd 
-
 - libxml2.tbd 
-
 - libiconv.tbd
-
-  ==如果仍然报错，可继续添加以下依赖库，默认以下依赖库系统已自动添加！==
-
-  - StoreKit.framework
-  - MobileCoreServices.framework
-  - WebKit.framework
-  - MediaPlayer.framework
-  - CoreMedia.framework
-  - AVFoundation.framework
-  - CoreLocation.framework
-  - CoreTelephony.framework
-  - SystemConfiguration.framework
-  - AdSupport.framework
-  - CoreMotion.framework
-  - Security.framework  
-  - QuartzCore.framework 
-  - CoreGraphics.framework
-  - SafariServices.framework
-  - UIKit.framework
-  - Foundation.framework 
-  - JavaScriptCore.framework 
-  - MapKit.framework
-  - AssetsLibrary.framework
-  - AppTrackingTransparency.framework
+- libsqlite3.tbd
+- StoreKit.framework
+- MobileCoreServices.framework
+- WebKit.framework
+- MediaPlayer.framework
+- CoreMedia.framework
+- AVFoundation.framework
+- CoreLocation.framework
+- CoreTelephony.framework
+- SystemConfiguration.framework
+- AdSupport.framework
+- CoreMotion.framework
+- Security.framework  
+- QuartzCore.framework 
+- CoreGraphics.framework
+- SafariServices.framework
+- UIKit.framework
+- Foundation.framework 
+- JavaScriptCore.framework 
+- MapKit.framework
+- AssetsLibrary.framework
+- AppTrackingTransparency.framework
 
 
 具体操作如图所示：
@@ -209,8 +197,8 @@
 
 SDK3.0版本以后支持pod方式接入，只需配置pod环境，在podfile文件中加入以下代码即可接入成功。不用在添加任何依赖库。
 ```
-# 建议pod到最新版本 当前最新版本为4.5.0
-pod 'YXLaunchAD' , '~> 4.5.0'
+# 建议pod到最新版本 当前最新版本为4.5.2
+pod 'YXLaunchAD' , '~> 4.5.2'
 ```
 更多关于pod方式的接入请参考 [gitthub地址](https://github.com/xiaofu666/YQAdvertisement_SDK)
 
@@ -244,8 +232,6 @@ SDK的开屏广告建议在 AppDelegate 的方法 ```- (BOOL)application:(UIAppl
 
 ```objective-c
 YXLaunchAdManager *adManager = [YXLaunchAdManager new];
-adManager.waitDataDuration = 5;
-adManager.duration = 5;
 adManager.mediaId = @"运营分配的媒体位";
 adManager.delegate = self;
 adManager.showBackImage = YES;
@@ -257,17 +243,17 @@ adManager.showBackImage = YES;
 - 非全屏示例：
 
 ```objective-c
-YXLaunchAdManager *adManager = [YXLaunchAdManager new];
-adManager.waitDataDuration = 5;
-adManager.duration = 5;
-adManager.mediaId = @"运营分配的媒体位";
-adManager.delegate = self;
-adManager.showBackImage = YES;
+//含 APP Logo 的bottomView
 UIView *bottom = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height * 0.8, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.2)];
 bottom.backgroundColor = [UIColor whiteColor];
 UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"APP的Logo"]];
 image.center = CGPointMake(bottom.bounds.size.width/2, bottom.bounds.size.height/2);
 [bottom addSubview:image];
+
+YXLaunchAdManager *adManager = [YXLaunchAdManager new];
+adManager.mediaId = @"运营分配的媒体位";
+adManager.delegate = self;
+adManager.showBackImage = YES;
 adManager.bottomView = bottom;
 [adManager loadLaunchAdWithShowAdWindow:[[UIApplication sharedApplication] keyWindow]];
 ```
@@ -346,230 +332,10 @@ self.motivationVideo.mediaId = @"beta_ios_video";//使用申请得到的媒体�
 - **使用说明：**SDK提供数据视图。具体可参考Demo中 YXPasterVideoViewController 部分示例代码
 
 
-## 2. 资讯内容接入
 
-###  2.1    准备工作
+## 2. H5 商城接入
 
-#### 2.1.1 申请内容接入用户ID和对应的内容位ID
-1.   申请账号：开发者从云蜻SDK后台运营人员处获取用户、密码后，登录[云蜻内容运营后台](http://news.yunqingugm.com/)。
-
-2.  接入用户 ID 以及内容位ID ：开发者每创建一个应用后，系统会自动生成用户ID和内容位ID，可在云蜻SDK后台界面查看到已创建的应用以及对应的用户ID和内容位ID。
-
-#### 2.1.2 导入framework
-
-获取 framework 文件后直接将 {YXLaunchAD.framework、XibAndPng.bundle}文件拖入工程即可。此 SDK 依赖第三方 MJRefresh与Weichat SDK,若工程已有，请勿重复导入
-
-拖入时请按以下方式选择：
-
-![image.png](https://upload-images.jianshu.io/upload_images/12555132-b197ba65dc049b98.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-拖入完请确保Copy Bundle Resources中有XibAndPng.bundle，否则可能出现icon图片加载不出来的情况。
-
-
-###  2.2     全屏接入
-
-```objective-c
-SFInformationViewController *infoVC = [SFInformationViewController new];
-infoVC.mediaId = @"1234";     //账号ID
-infoVC.mLocationId = @"34";   //媒体内容位 ID
-[self.navigationController pushViewController:infoVC animated:YES];
-```
-
-###  2.3     半屏接入
-
-#### 2.3.1 包含 tableView 半屏接入以及 scrollView 半屏接入，详情参考 Demo
- 新建自定义ScrollVIew或tableView继承自系统的UIScrollView或 UITableView，遵守代理<UIGestureRecognizerDelegate>，实现代理方法，让其允许多手势操作
-```objective-c
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-return YES;
-}
-```
-#### 2.3.2 主控制器操作
-让自己的主控器以自定义 ScrollVIew 或 tableView 为底，遵守代理 <UIScrollViewDelegate>，实现代理方法，在viewDidLoad中添加监听，在dealloc中移除监听。 懒加载SFHalfPageViewController，让当前主控器添加子控制器，创建属性canScroll来控制ScrollView 的滑动，详情参考 Demo
-
-##### **a. scrollView 的 Demo** 
-
-> ##### (isShowAllChannels ： YES -> 所有频道 ; NO -> 只有一个推荐频道)
-
-```objective-c
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.canScroll = YES;
-    // Do any additional setup after loading the view.
-    self.scrollView = [[SFScrollerView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-    self.scrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height+300);
-    self.scrollView.delegate = self;
-    [self.view addSubview:self.scrollView];
-    
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 300)];
-    headView.backgroundColor = [UIColor purpleColor];
-    [self.scrollView addSubview:headView];
-    
-    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 300, self.view.bounds.size.width, self.view.bounds.size.height)];
-    footView.backgroundColor = [UIColor cyanColor];
-    [self.scrollView addSubview:footView];
-    
-    
-    [self addChildViewController:self.webVC];
-    [footView addSubview:self.webVC.view];
-    
-    //添加请求数据的 HUD 开始请求推荐数据
-    [self.webVC refreshNewsData];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollStatus) name:LEAVETOPNOTIFITION object:nil];
-    
-}
-- (void)changeScrollStatus//改变主视图的状态
-{
-    self.canScroll = YES;
-    self.webVC.vcCanScroll = NO;
-}
-- (SFHalfPageViewController *)webVC{
-    if (_webVC == nil) {
-        _webVC = [[SFHalfPageViewController alloc] init];
-        _webVC.mediaId = @"4";
-        _webVC.mLocationId = @"3";
-        _webVC.vcCanScroll = NO;
-        _webVC.halfDelegate = self;
-        _webVC.isShowAllChannels = self.isShowAll;
-    }
-    return _webVC;
-}
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGFloat offset = scrollView.contentOffset.y;
-    CGFloat bottomCellOffset = 300 - StatusBarAndNavigationBarHeight;
-    if (offset >= bottomCellOffset) {
-        scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
-        if (self.canScroll) {
-            self.canScroll = NO;
-            self.webVC.vcCanScroll = YES;
-        }
-    }else{
-        if (!self.canScroll) {//子视图没到顶部
-            scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
-        }
-    }
-    self.scrollView.showsVerticalScrollIndicator = _canScroll?YES:NO;
-}
-#pragma mark - SFPageViewControllerDelegate
-- (void)newsDataRefreshSuccess{
-    NSLog(@"数据加载成功");
-}
-- (void)newsDataRefreshFail:(NSError *)error{
-    NSLog(@"数据加载失败，error = %@",error);
-}
-
-- (void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
-}
-```
-
-##### **b. tableView 的 Demo** 
-
-> ##### (isShowAllChannels ： YES -> 所有频道 ; NO -> 只有一个推荐频道)
-
-```
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.canScroll = YES;
-    // Do any additional setup after loading the view.
-    [self addChildViewController:self.webVC];
-    [self.view addSubview:self.tableView];
-    
-    //添加请求数据的 HUD 开始请求推荐数据
-    [self.webVC refreshNewsData];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollStatus) name:LEAVETOPNOTIFITION object:nil];
-    
-}
-- (void)changeScrollStatus//改变主视图的状态
-{
-    self.canScroll = YES;
-    self.webVC.vcCanScroll = NO;
-}
-- (SFHalfPageViewController *)webVC{
-    if (_webVC == nil) {
-        _webVC = [[SFHalfPageViewController alloc] init];
-        _webVC.mediaId = @"4";
-        _webVC.mLocationId = @"3";
-        _webVC.vcCanScroll = NO;
-        _webVC.halfDelegate = self;
-        _webVC.isShowAllChannels = self.isShowAll;
-    }
-    return _webVC;
-}
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGFloat offset = scrollView.contentOffset.y;
-    CGFloat bottomCellOffset = 300 - StatusBarAndNavigationBarHeight;
-    if (offset >= bottomCellOffset) {
-        self.tableView.contentOffset = CGPointMake(0, bottomCellOffset);
-        if (self.canScroll) {
-            self.canScroll = NO;
-            self.webVC.vcCanScroll = YES;
-        }
-    }else{
-        if (!self.canScroll) {//子视图没到顶部
-            scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
-        }
-    }
-    self.tableView.showsVerticalScrollIndicator = _canScroll?YES:NO;
-}
-- (UIView *)tableViewHeaderView{
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 300)];
-    UILabel *label = [[UILabel alloc] initWithFrame:headView.bounds];
-    label.text = @"这是header~~~~~~~~~~~~~~";
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor redColor];
-    [headView addSubview:label];
-    headView.backgroundColor = [UIColor greenColor];
-    return headView;
-}
-
-- (SFTableView *)tableView{
-    if(!_tableView){
-        _tableView = [[SFTableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.rowHeight = self.view.bounds.size.height;
-        _tableView.tableHeaderView = [self tableViewHeaderView];
-        [_tableView registerNib:[UINib nibWithNibName:@"YXFeedAdTableViewCell" bundle:nil] forCellReuseIdentifier:@"YXFeedAdTableViewCell"];
-    }
-    return _tableView;
-}
-#pragma mark - tableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YXFeedAdTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YXFeedAdTableViewCell" forIndexPath:indexPath];
-    [cell.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    self.webVC.view.frame = CGRectMake(0, 0, self.tableView.bounds.size.width, self.tableView.bounds.size.height);
-    cell.costomView = self.webVC.view;
-    return cell;
-}
-#pragma mark - SFPageViewControllerDelegate
-- (void)newsDataRefreshSuccess{
-    NSLog(@"数据加载成功");
-}
-- (void)newsDataRefreshFail:(NSError *)error{
-    NSLog(@"数据加载失败，error = %@",error);
-}
-- (void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
-}
-```
-
-
-## 3. H5 商城接入
-
-### 3.1 准备工作
+### 2.1 准备工作
 
 申请账号：开发者从SDK后台运营人员处获取Channel ID。
 
@@ -584,11 +350,17 @@ return YES;
 
 [YXAdSDKManager defaultManager].vuid = @"";
 
-### 3.2 导入SDK包
+### 2.2 导入SDK包
 
-将SDK拖入主工程，在项目设置中，选择Build Phases,点击左上角+号，添加Embed Frameworks，在destination类别中，选择Frameworks, 在下方添加YXLaunchAD.framework。
+获取 framework 文件后直接将 {YXLaunchAD.framework、XibAndPng.bundle}文件拖入工程即可。
 
-### 3.3 权限申请
+拖入时请按以下方式选择：
+
+![image](https://upload-images.jianshu.io/upload_images/12555132-308f7b50f339d41d.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+拖入完请确保Copy Bundle Resources中有XibAndPng.bundle，否则可能出现icon图片加载不出来的情况。
+
+### 2.3 权限申请
 
 依赖广告权限IDFA
 
