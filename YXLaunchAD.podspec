@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YXLaunchAD"
-  s.version      = "4.5.2" # 版本号
+  s.version      = "4.5.4" # 版本号
   s.summary      = "YXLaunchAds is a SDK from CloudDragonfly providing union AD service."
   s.description  = <<-DESC
                    ‘CloudDragonfly provides Union ADs which include native、banner、feed、splash、RewardVideo etc..’
@@ -21,10 +21,12 @@ Pod::Spec.new do |s|
   s.vendored_frameworks =  'YXLaunchAD/Frameworks/*.framework'
   s.resource = 'YXLaunchAD/Frameworks/XibAndPng.bundle'
   
+  s.xcconfig = { "OTHER_LDFLAGS" => "-ObjC" }
   s.pod_target_xcconfig = { 'VALID_ARCHS[sdk=iphonesimulator*]' => '' }
 
   s.dependency 'Ads-CN'
   s.dependency 'GDTMobSDK'
   s.dependency 'KSAdSDK'
+  s.dependency 'JztSDK'
   
 end

@@ -21,7 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 /**
  加载成功的回调
- 
  @param data  回调的广告素材
  */
 - (void)didLoadFeedAd:(NSArray<YXFeedAdData*>*_Nullable)data;
@@ -47,6 +46,10 @@ NS_ASSUME_NONNULL_BEGIN
  广告渲染失败
  */
 - (void)didFeedAdRenderFail;
+/**
+ 落地页或者appstoe返回事件，方便用户做返回后的处理工作
+ */
+- (void)didAdShowReturn;
 
 @end
 

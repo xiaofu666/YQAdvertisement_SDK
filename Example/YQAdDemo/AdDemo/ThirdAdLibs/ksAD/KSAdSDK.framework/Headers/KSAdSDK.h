@@ -8,11 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
-#if __has_include(<KSAdSDK/KSAdPos.h>)
-#import <KSAdSDK/KSAdPos.h>
-#endif
-
 #if __has_include(<KSAdSDK/KSAdSDKError.h>)
 #import <KSAdSDK/KSAdSDKError.h>
 #endif

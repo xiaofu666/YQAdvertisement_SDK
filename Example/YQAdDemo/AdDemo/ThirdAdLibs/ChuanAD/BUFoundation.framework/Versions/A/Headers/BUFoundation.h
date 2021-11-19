@@ -131,10 +131,12 @@
 #import <BUFoundation/UIButton+BUWebCache.h>
 #import <BUFoundation/BU_SDImageAssetManager.h>
 #import <BUFoundation/BU_SDAsyncBlockOperation.h>
+#import <BUFoundation/BU_SDImageCacheConfig.h>
 
 #import <BUFoundation/BUZipArchive.h>
 #import <BUFoundation/BUGeckoPreloadManager.h>
 #import <BUFoundation/BUDownloadSpeedServer.h>
 #import <BUFoundation/BU_ZFPlayer.h>
+#import <BUFoundation/BUAudioSessionHandler.h>
 
 /************************************ ThirdParty***********************************/

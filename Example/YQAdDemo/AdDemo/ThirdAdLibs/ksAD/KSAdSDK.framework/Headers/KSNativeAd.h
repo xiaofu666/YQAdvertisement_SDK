@@ -7,17 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#if __has_include(<KSUBaseAd/KSAd.h>)
-#import <KSUBaseAd/KSAd.h>
-#else
-#import "KSAd.h"
-#endif
-#if __has_include(<KSUModel/KSMaterialMeta.h>)
-#import <KSUModel/KSMaterialMeta.h>
-#else
-#import "KSMaterialMeta.h"
-#endif
 
+#import "KSAd.h"
+#import "KSMaterialMeta.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

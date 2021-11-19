@@ -8,12 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "KSNativeAd.h"
-
-#if __has_include(<<KSUVideoView/KSVideoAdView.h>)
-#import <KSUVideoView/KSVideoAdView.h>
-#else
 #import "KSVideoAdView.h"
-#endif
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KSNativeAdRelatedView : NSObject

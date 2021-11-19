@@ -39,6 +39,10 @@ NS_ASSUME_NONNULL_BEGIN
  广告关闭后回调
  */
 - (void)didCloseBannerAd;
+/**
+ 落地页或者appstoe返回事件，方便用户做返回后的处理工作
+ */
+-(void)didAdShowReturn;
 
 @end
 

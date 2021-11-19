@@ -38,13 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,weak) id<YXMutBannerAdManagerDelegate> delegate;
 
-@property (nonatomic,assign) YXADSize  adSize;
-
-/**
- 当adSize类型为YXADSizeCustom时，宽高必传，其余模式不用传
- */
-@property (nonatomic, assign) CGFloat s2sWidth;
-@property (nonatomic, assign) CGFloat s2sHeight;
+@property (nonatomic,assign) YXADSize  adSize __attribute__((deprecated("即将废弃")));
 
 //轮播图弧度
 @property (nonatomic, assign) CGFloat cornerRadius;

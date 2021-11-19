@@ -7,11 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-#if __has_include(<KSUDefine/KSAdShowDirection.h>)
-    #import <KSUDefine/KSAdShowDirection.h>
-#else
-    #import "KSAdShowDirection.h"
-#endif
+#import "KSAdShowDirection.h"
 
 NS_ASSUME_NONNULL_BEGIN
 DEPRECATED_MSG_ATTRIBUTE("use KSSplashAdView instead.")

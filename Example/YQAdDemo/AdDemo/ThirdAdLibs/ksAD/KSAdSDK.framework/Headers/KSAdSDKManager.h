@@ -26,16 +26,10 @@
 #import "KSAdPermission.h"
 #endif
 
-#if __has_include(<KSUDefine/KSAdUserInfo.h>)
+#if __has_include(<KSUSDKInfo/KSAdUserInfo.h>)
 #import <KSUSDKInfo/KSAdUserInfo.h>
 #else
 #import "KSAdUserInfo.h"
-#endif
-
-#if __has_include(<KSUNetworking/KSAdAppInfo.h>)
-#import <KSUNetworking/KSAdAppInfo.h>
-#else
-#import "KSAdAppInfo.h"
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
@@ -64,6 +58,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setAppTag:(NSString *)appTag;
 // optional, enable personalized recommendation, default is YES
 + (void)setEnablePersonalRecommend:(BOOL)enable;
+// optional, enable programmatic recommendation, default is YES
++ (void)setEnableProgrammaticRecommend:(BOOL)enable;
 /// Configure user info.
 /// @param age optional 年龄段
 /// @param gender optional 性别

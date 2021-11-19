@@ -17,33 +17,33 @@
 //广告代理
 @protocol YXLaunchAdManagerDelegate <NSObject>
 @optional
-/**
- 加载成功的回调
- @param view  回调的view（开屏的时候返回nil）
+/*
+ * 加载成功的回调
+ * @param view  回调的view（开屏的时候返回nil）
  */
 - (void)didLoadAd:(UIView *_Nullable)view;
-/**
- 取广告失败调用
- @param error 为错误信息
+/*
+ * 取广告失败调用
+ * @param error 为错误信息
  */
 - (void)didFailedLoadAd:(NSError *_Nonnull)error;
-/**
- 广告结束 移除window中的视图
+/*
+ * 广告结束 移除window中的视图
  */
 - (void)LaunchShowFinish;
-/**
- 广告点击后回调
+/*
+ * 广告点击后回调
  */
 - (void)didClickedAdWithUrlStr:(NSString *_Nonnull)urlStr;
-/**
- 落地页或者appstoe返回事件，方便用户做返回后的处理工作
+/*
+ * 落地页或者appstoe返回事件，方便用户做返回后的处理工作
  */
 -(void)didAdShowReturn;
-/**
- 跳过按钮点击回调
+/*
+ * 跳过按钮点击回调
  */
 - (void)lunchADSkipButtonClick;
-/**
+/*
  *  倒计时回调
  *  @param duration 倒计时时间
  */
@@ -62,14 +62,25 @@
  1. 全屏接入：bottomView 不传入
  2. 半屏接入：bottomView 传入logo的view
  */
-/** 设置半屏广告的所含 logo 的 view  */
+/**
+ 设置半屏广告的所含 logo 的 view
+ */
 @property (nonatomic,strong) UIView * _Nullable bottomView;
 
+/**
+ 自定义开屏广告跳过按钮位置
+ */
+@property (nonatomic) CGRect skipButtonFrame;
+
 // 以下为可选参数
-///** 缓存机制(default YXLaunchImageDefault) */
+/**
+ 缓存机制(default YXLaunchImageDefault)
+ */
 @property(nonatomic,assign)YXLaunchAdImageOptions imageOption;
 
-/** 设置开屏广告的停留时间default 5s （建议在 4s-5s 内） */
+/**
+ 设置开屏广告的停留时间default 5s （建议在 4s-5s 内）
+ */
 @property(nonatomic,assign)NSInteger duration;
 /**
  设置开屏广告的等待时间 default 3s （建议在 3s-5s 内）
